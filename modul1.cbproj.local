@@ -8,5 +8,8 @@
     <Transaction>2017.04.10 13:12:01.767.cpp,C:\Users\Erogon\Documents\RAD Studio\Projects\modul\Unit1.cpp=C:\Users\Erogon\Documents\RAD Studio\Projects\modul\modulform2.cpp</Transaction>
     <Transaction>2017.04.10 13:12:01.767.h,C:\Users\Erogon\Documents\RAD Studio\Projects\modul\Unit1.h=C:\Users\Erogon\Documents\RAD Studio\Projects\modul\modulform2.h</Transaction>
     <Transaction>2017.04.10 13:12:01.767.dfm,C:\Users\Erogon\Documents\RAD Studio\Projects\modul\Unit1.dfm=C:\Users\Erogon\Documents\RAD Studio\Projects\modul\modulform2.dfm</Transaction>
+    <Transaction>2017.05.15 13:25:21.421.cpp,C:\svn\trunk\Unit2.cpp=C:\svn\trunk\about.cpp</Transaction>
+    <Transaction>2017.05.15 13:25:21.421.h,C:\svn\trunk\Unit2.h=C:\svn\trunk\about.h</Transaction>
+    <Transaction>2017.05.15 13:25:21.421.dfm,C:\svn\trunk\Unit2.dfm=C:\svn\trunk\about.dfm</Transaction>
   </Transactions>
 </BorlandProject>

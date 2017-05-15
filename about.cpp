@@ -3,26 +3,14 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "modul.h"
-#include "Unit2.h"
+#include "about.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm5 *Form5;
+TaboutForm *aboutForm;
 //---------------------------------------------------------------------------
-__fastcall TForm5::TForm5(TComponent* Owner)
+__fastcall TaboutForm::TaboutForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-
-
-
-
-
-void __fastcall TForm5::abot1Click(TObject *Sender)
-{
-	about->
-}
-//---------------------------------------------------------------------------
-
