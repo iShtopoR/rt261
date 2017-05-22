@@ -1,6 +1,7 @@
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
+#include <stdio.h>
 #pragma hdrstop
 #include "modul.h"
 #include "modulform2.h"
@@ -67,16 +68,49 @@ void __fastcall Tarticlebase::FormCreate(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall Tarticlebase::Button6Click(TObject *Sender)
+void __fastcall Tarticlebase::Button3Click(TObject *Sender)
 {
-	// получаем стоимость сверла Стоимость / Ресурс * Время
-	// Время работы берем из таблицы заказа
-	// Общая формула:  ( ( ( СтоимостьИнструмента / Ресурс ) * Время ) +  ... + ... + ... ) * Курс
-   double totalPrice = 0; // Итоговая стоимость
-   double SverloPrice = 0; //TODO стоимость минуты сверла
-   double RabotaPrice = 0; //TODO стоимость минуты работы
-   double RatePrice = 0; //TODO Курс евро
+MYSQL_ROW row;
+	FILE *material_spr;
+	int i;
+	int coloumn_num = 5;
+	mysql_server_init(0, NULL, NULL);
+	MYSQL *db = mysql_init(NULL);
+	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
+	AnsiString query = "SELECT * FROM rt_material";
+	mysql_query(db, query.c_str());
+	MYSQL_RES *result = mysql_store_result(db);
+	if (result) {
+		material_spr=fopen ("material_spr.csv","w");
+		if (material_spr == NULL)	{
+			Label1->Caption = "Ошибка открытия файла";
+			mysql_close(db);
+			mysql_server_end();
+			return;
+		}
+		for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
+			for (int col = 0; col < coloumn_num; col++) {
+					fprintf (material_spr, "%s", row[col]);
+					if (col < (coloumn_num - 1)) {
+						fprintf (material_spr, ";");
+					}
+			}
+			fprintf (material_spr, "\n");
+		}
+		fclose (material_spr);
+	if (result) {
+		for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
+			for (int col = 0; col < coloumn_num; col++) {
 
+			}
+
+		}
+	}else {
+		Label1->Caption="Error:" + (AnsiString)mysql_error(db);
+	}
+	mysql_close(db);
+	mysql_server_end();
+}
 }
 //---------------------------------------------------------------------------
 

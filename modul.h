@@ -35,12 +35,12 @@ __published:	// IDE-managed Components
 	TMenuItem *N3;
 	TMenuItem *N4;
 	TLabel *Label6;
-	TButton *Button6;
+	TButton *Button5;
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall tableupdate();
-	void __fastcall Button6Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tarticlebase(TComponent* Owner);
