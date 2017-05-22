@@ -10,7 +10,6 @@ object Form5: TForm5
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  Menu = MainMenu1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
@@ -98,8 +97,8 @@ object Form5: TForm5
       #1086#1090#1074)
   end
   object StringGrid1: TStringGrid
-    Left = 35
-    Top = 130
+    Left = 8
+    Top = 8
     Width = 733
     Height = 193
     TabOrder = 6
@@ -127,17 +126,5 @@ object Form5: TForm5
     Height = 52
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1076#1072#1085#1085#1099#1077
     TabOrder = 9
-  end
-  object MainMenu1: TMainMenu
-    Left = 32
-    Top = 24
-    object file1: TMenuItem
-      Caption = 'file'
-      object abot1: TMenuItem
-        Caption = 'abot'
-        Checked = True
-        OnClick = abot1Click
-      end
-    end
   end
 end

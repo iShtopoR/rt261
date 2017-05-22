@@ -61,14 +61,6 @@
 			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)\release;$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="modul1.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="modulform2.cpp">
-				<Form>Form1</Form>
-				<DependentOn>modulform2.h</DependentOn>
-				<BuildOrder>3</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="modul.cpp">
 				<Form>Form5</Form>
 				<DependentOn>modul.h</DependentOn>
@@ -77,14 +69,16 @@
 			<ResFiles Include="modul1.res">
 				<BuildOrder>1</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="about.cpp">
-				<Form>aboutForm</Form>
-				<DependentOn>about.h</DependentOn>
-				<BuildOrder>4</BuildOrder>
+			<CppCompile Include="modul1.cpp">
+				<BuildOrder>0</BuildOrder>
 			</CppCompile>
-			<FormResources Include="modulform2.dfm"/>
+			<CppCompile Include="modulform2.cpp">
+				<Form>Form1</Form>
+				<DependentOn>modulform2.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
 			<FormResources Include="modul.dfm"/>
-			<FormResources Include="about.dfm"/>
+			<FormResources Include="modulform2.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
