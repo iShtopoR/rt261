@@ -28,6 +28,7 @@ __published:	// IDE-managed Components
 	TMenuItem *N2;
 	TMenuItem *N3;
 	TMenuItem *N4;
+	TLabel *Label3;
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
