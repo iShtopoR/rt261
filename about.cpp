@@ -3,13 +3,13 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "about.h"
+#include "About.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TaboutForm *aboutForm;
+TAboutForm *AboutForm;
 //---------------------------------------------------------------------------
-__fastcall TaboutForm::TaboutForm(TComponent* Owner)
+__fastcall TAboutForm::TAboutForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }

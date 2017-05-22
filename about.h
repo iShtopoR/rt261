@@ -1,21 +1,22 @@
 //---------------------------------------------------------------------------
 
-#ifndef aboutH
-#define aboutH
+#ifndef AboutH
+#define AboutH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
 //---------------------------------------------------------------------------
-class TaboutForm : public TForm
+class TAboutForm : public TForm
 {
 __published:	// IDE-managed Components
+	TLabel *Label1;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TaboutForm(TComponent* Owner);
+	__fastcall TAboutForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TaboutForm *aboutForm;
+extern PACKAGE TAboutForm *AboutForm;
 //---------------------------------------------------------------------------
 #endif

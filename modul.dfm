@@ -1,7 +1,7 @@
-object articlebase: Tarticlebase
+object Form5: TForm5
   Left = 0
   Top = 0
-  Caption = #1041#1072#1079#1072' '#1072#1088#1090#1080#1082#1091#1083#1086#1074
+  Caption = 'Form5'
   ClientHeight = 442
   ClientWidth = 749
   Color = clBtnFace
@@ -48,6 +48,13 @@ object articlebase: Tarticlebase
     Width = 34
     Height = 13
     Caption = #1056#1077#1089#1091#1088#1089
+  end
+  object Label6: TLabel
+    Left = 287
+    Top = 389
+    Width = 107
+    Height = 13
+    Caption = #1058#1091#1090' '#1073#1091#1076#1077#1090' '#1089#1090#1086#1080#1084#1086#1089#1090#1100
   end
   object Button1: TButton
     Left = 287
@@ -121,28 +128,30 @@ object articlebase: Tarticlebase
     TabOrder = 8
   end
   object Button4: TButton
-    Left = 496
-    Top = 363
+    Left = 488
+    Top = 371
     Width = 225
     Height = 52
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1076#1072#1085#1085#1099#1077
     TabOrder = 9
   end
+  object Button5: TButton
+    Left = 144
+    Top = 381
+    Width = 129
+    Height = 31
+    Caption = #1056#1072#1089#1089#1095#1077#1090' '#1089#1090#1086#1080#1084#1086#1089#1090#1080
+    TabOrder = 10
+    OnClick = Button5Click
+  end
   object MainMenu1: TMainMenu
     Left = 8
-    Top = 400
-    object N1: TMenuItem
-      Caption = #1060#1072#1081#1083
-      object N2: TMenuItem
-        Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
-        OnClick = N2Click
-      end
-    end
-    object N3: TMenuItem
-      Caption = #1057#1082#1083#1072#1076
-      object N4: TMenuItem
-        Caption = #1058#1086#1074#1072#1088#1099' '#1085#1072' '#1089#1082#1083#1072#1076#1077
-        OnClick = N4Click
+    Top = 408
+    object File1: TMenuItem
+      Caption = 'File'
+      object About1: TMenuItem
+        Caption = 'About'
+        OnClick = About1Click
       end
     end
   end

@@ -8,8 +8,15 @@
     <Transaction>2017.04.10 13:12:01.767.cpp,C:\Users\Erogon\Documents\RAD Studio\Projects\modul\Unit1.cpp=C:\Users\Erogon\Documents\RAD Studio\Projects\modul\modulform2.cpp</Transaction>
     <Transaction>2017.04.10 13:12:01.767.h,C:\Users\Erogon\Documents\RAD Studio\Projects\modul\Unit1.h=C:\Users\Erogon\Documents\RAD Studio\Projects\modul\modulform2.h</Transaction>
     <Transaction>2017.04.10 13:12:01.767.dfm,C:\Users\Erogon\Documents\RAD Studio\Projects\modul\Unit1.dfm=C:\Users\Erogon\Documents\RAD Studio\Projects\modul\modulform2.dfm</Transaction>
+<<<<<<< .mine
+    <Transaction>2017.05.15 13:08:14.929.cpp,C:\Users\Валентин\Documents\RAD Studio\RT2-61\trunk\Unit2.cpp=C:\Users\Валентин\Documents\RAD Studio\RT2-61\trunk\About.cpp</Transaction>
+    <Transaction>2017.05.15 13:08:14.929.h,C:\Users\Валентин\Documents\RAD Studio\RT2-61\trunk\Unit2.h=C:\Users\Валентин\Documents\RAD Studio\RT2-61\trunk\About.h</Transaction>
+    <Transaction>2017.05.15 13:08:14.929.dfm,C:\Users\Валентин\Documents\RAD Studio\RT2-61\trunk\Unit2.dfm=C:\Users\Валентин\Documents\RAD Studio\RT2-61\trunk\About.dfm</Transaction>
+||||||| .r45
+=======
     <Transaction>2017.05.22 11:11:24.014.cpp,C:\test3\trunk\Unit1.cpp=C:\test3\trunk\aboutprogramm.cpp</Transaction>
     <Transaction>2017.05.22 11:11:24.015.h,C:\test3\trunk\Unit1.h=C:\test3\trunk\aboutprogramm.h</Transaction>
     <Transaction>2017.05.22 11:11:24.015.dfm,C:\test3\trunk\Unit1.dfm=C:\test3\trunk\aboutprogramm.dfm</Transaction>
+>>>>>>> .r46
   </Transactions>
 </BorlandProject>
