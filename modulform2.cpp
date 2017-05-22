@@ -7,6 +7,7 @@
 #include "modulform2.h"
 #include "aboutprogramm.h"
 #include <mysql.h>
+#include <stdio.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
