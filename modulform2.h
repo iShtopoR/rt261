@@ -8,8 +8,9 @@
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
 #include <Grids.hpp>
+#include <Menus.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class Twarehouse : public TForm
 {
 __published:	// IDE-managed Components
 	TStringGrid *StringGrid1;
@@ -22,11 +23,18 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TButton *Button2;
 	TButton *Button3;
+	TMainMenu *MainMenu1;
+	TMenuItem *N1;
+	TMenuItem *N2;
+	TMenuItem *N3;
+	TMenuItem *N4;
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall N4Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall Twarehouse(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE Twarehouse *warehouse;
 //---------------------------------------------------------------------------
 #endif
