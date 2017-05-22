@@ -13,7 +13,7 @@
 class Twarehouse : public TForm
 {
 __published:	// IDE-managed Components
-	TStringGrid *StringGrid1;
+	TStringGrid *warehouse;
 	TEdit *Edit1;
 	TEdit *Edit2;
 	TComboBox *ComboBox1;
@@ -30,6 +30,9 @@ __published:	// IDE-managed Components
 	TMenuItem *N4;
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall tableupdate();
+
 private:	// User declarations
 public:		// User declarations
 	__fastcall Twarehouse(TComponent* Owner);

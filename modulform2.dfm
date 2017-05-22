@@ -2,9 +2,9 @@
   Left = 0
   Top = 0
   Caption = #1058#1086#1074#1072#1088#1099' '#1085#1072' '#1089#1082#1083#1072#1076#1077
-  ClientHeight = 386
+  ClientHeight = 418
   ClientWidth = 768
-  Color = clBtnFace
+  Color = clHighlight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -12,6 +12,7 @@
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Артикул: TLabel
@@ -35,7 +36,7 @@
     Height = 13
     Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077
   end
-  object StringGrid1: TStringGrid
+  object warehouse: TStringGrid
     Left = 8
     Top = 8
     Width = 752

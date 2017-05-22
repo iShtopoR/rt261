@@ -11,7 +11,7 @@
 #include <Grids.hpp>
 #include <Menus.hpp>
 //---------------------------------------------------------------------------
-class TForm5 : public TForm
+class Tarticlebase : public TForm
 {
 __published:	// IDE-managed Components
 	TButton *Button1;
@@ -20,7 +20,7 @@ __published:	// IDE-managed Components
 	TEdit *cost;
 	TEdit *res;
 	TComboBox *sunit;
-	TStringGrid *StringGrid1;
+	TStringGrid *material;
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
@@ -30,17 +30,20 @@ __published:	// IDE-managed Components
 	TButton *Button3;
 	TButton *Button4;
 	TMainMenu *MainMenu1;
-	TMenuItem *File1;
-	TMenuItem *About1;
-	TButton *Button5;
+	TMenuItem *N1;
+	TMenuItem *N2;
+	TMenuItem *N3;
+	TMenuItem *N4;
 	TLabel *Label6;
-	void __fastcall About1Click(TObject *Sender);
-	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall N4Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall tableupdate();
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm5(TComponent* Owner);
+	__fastcall Tarticlebase(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm5 *Form5;
+extern PACKAGE Tarticlebase *articlebase;
 //---------------------------------------------------------------------------
 #endif
