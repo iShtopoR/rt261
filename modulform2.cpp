@@ -125,3 +125,41 @@ MYSQL_ROW row;
 }
 //---------------------------------------------------------------------------
 
+void __fastcall Twarehouse::Button1Click(TObject *Sender)
+{
+int m_id;
+	mysql_server_init(0, NULL, NULL);
+	MYSQL* db = mysql_init(NULL);
+	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
+	AnsiString query = "SELECT MAX(w_id) FROM rt_warehouse";
+	mysql_query(db, query.c_str());
+	MYSQL_RES* result = mysql_store_result(db);
+	if (result) {
+		MYSQL_ROW row = mysql_fetch_row(result);
+		if (row) {
+			m_id = StrToInt(row[0]) + 1;
+		}else{
+			Label3->Caption = "Error";
+			mysql_close(db);
+			mysql_server_end();
+		}
+	}else {
+		Label3->Caption="Error:" + (AnsiString)mysql_error(db);
+	}
+	query = "INSERT INTO rt_warehouse (w_id, w_article, w_endres, w_status) VALUES ("+ IntToStr(m_id) +","
+	""+ article->Text +","+ ores->Text+ ","+ (wstatus->ItemIndex+1) +")";
+	int query_result = mysql_query(db, query.c_str());
+	if (query_result) {
+		  Label3->Caption = "Error" + (AnsiString)mysql_error(db);
+		  mysql_close(db);
+		  mysql_server_end();
+	}
+	mysql_close(db);
+	mysql_server_end();
+	tableupdate();
+
+
+}
+//---------------------------------------------------------------------------
+
+

@@ -37,11 +37,10 @@
     Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077
   end
   object Label3: TLabel
-    Left = 368
-    Top = 304
-    Width = 73
-    Height = 38
-    Caption = 'Label3'
+    Left = 257
+    Top = 275
+    Width = 225
+    Height = 123
   end
   object warehouse: TStringGrid
     Left = 29
@@ -55,21 +54,21 @@
     FixedRows = 0
     TabOrder = 0
   end
-  object Edit1: TEdit
+  object article: TEdit
     Left = 88
     Top = 272
     Width = 154
     Height = 21
     TabOrder = 1
   end
-  object Edit2: TEdit
+  object ores: TEdit
     Left = 88
     Top = 299
     Width = 154
     Height = 21
     TabOrder = 2
   end
-  object ComboBox1: TComboBox
+  object wstatus: TComboBox
     Left = 88
     Top = 326
     Width = 154
@@ -89,6 +88,7 @@
     Height = 25
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
     TabOrder = 4
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 488

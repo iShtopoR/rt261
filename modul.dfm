@@ -65,6 +65,12 @@ object articlebase: Tarticlebase
     ParentColor = False
     ParentFont = False
   end
+  object Label7: TLabel
+    Left = 128
+    Top = 239
+    Width = 3
+    Height = 13
+  end
   object Button1: TButton
     Left = 287
     Top = 366
@@ -72,6 +78,7 @@ object articlebase: Tarticlebase
     Height = 25
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
     TabOrder = 0
+    OnClick = Button1Click
   end
   object article: TEdit
     Left = 128
@@ -131,6 +138,7 @@ object articlebase: Tarticlebase
     Height = 52
     Caption = #1048#1084#1087#1086#1088#1090' '#1089#1090#1086#1080#1084#1086#1089#1090#1080' '#1084#1072#1090#1077#1088#1080#1072#1083#1086#1074
     TabOrder = 7
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 496
