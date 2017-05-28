@@ -66,10 +66,10 @@ object articlebase: Tarticlebase
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 128
-    Top = 239
-    Width = 3
-    Height = 13
+    Left = 40
+    Top = 398
+    Width = 433
+    Height = 42
   end
   object Button1: TButton
     Left = 287

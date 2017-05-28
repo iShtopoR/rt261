@@ -156,8 +156,7 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
 			while(fscanf(articlecost, "%s;%s\n", art, cost) != EOF) {
 				if (!strcmp(row[1],art)) {
-				  	query = "INSERT INTO rt_material (m_article,m_name,m_cost,m_resource,m_unit) VALUES ("+ article->Text +","
-		"
+				  	Label7->Caption= 111;
 				}
 		}
 	}
