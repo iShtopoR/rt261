@@ -190,5 +190,9 @@ object articlebase: Tarticlebase
         OnClick = N4Click
       end
     end
+    object N5: TMenuItem
+      Caption = #1052#1086#1080' '#1087#1088#1086#1077#1082#1090#1099
+      OnClick = N5Click
+    end
   end
 end

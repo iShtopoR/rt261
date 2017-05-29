@@ -6,6 +6,8 @@
 #include "modul.h"
 #include "modulform2.h"
 #include "aboutprogramm.h"
+#include "Edit_proj_windows.h"
+#include "Sverla_window_addcpp.h"
 #include <mysql.h>
 #include <stdlib.h>
 //---------------------------------------------------------------------------
@@ -246,4 +248,11 @@ void __fastcall Tarticlebase::Button5Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+
+void __fastcall Tarticlebase::N5Click(TObject *Sender)
+{
+	   Proj_editor_w->Show();
+}
+//---------------------------------------------------------------------------
 
