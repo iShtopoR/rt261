@@ -68,8 +68,15 @@ object articlebase: Tarticlebase
   object Label7: TLabel
     Left = 40
     Top = 398
-    Width = 433
-    Height = 42
+    Width = 3
+    Height = 13
+  end
+  object Label8: TLabel
+    Left = 368
+    Top = 256
+    Width = 31
+    Height = 13
+    Caption = 'Label8'
   end
   object Button1: TButton
     Left = 287
@@ -158,12 +165,13 @@ object articlebase: Tarticlebase
     TabOrder = 9
   end
   object Button5: TButton
-    Left = 296
-    Top = 283
-    Width = 194
+    Left = 279
+    Top = 287
+    Width = 211
     Height = 52
     Caption = #1056#1072#1089#1089#1095#1077#1090' '#1089#1090#1086#1080#1084#1086#1089#1090#1080
     TabOrder = 10
+    OnClick = Button5Click
   end
   object MainMenu1: TMainMenu
     Left = 8
