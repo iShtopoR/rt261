@@ -9,7 +9,7 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 //---------------------------------------------------------------------------
-class TForm2 : public TForm
+class TFrezes : public TForm
 {
 __published:	// IDE-managed Components
 	TPanel *Panel1;
@@ -42,9 +42,9 @@ __published:	// IDE-managed Components
 	void __fastcall FrIdentChange(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm2(TComponent* Owner);
+	__fastcall TFrezes(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm2 *Form2;
+extern PACKAGE TFrezes *Frezes;
 //---------------------------------------------------------------------------
 #endif

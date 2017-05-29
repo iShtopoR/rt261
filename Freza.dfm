@@ -1,4 +1,4 @@
-object Form2: TForm2
+object Frezes: TFrezes
   Left = 0
   Top = 0
   Caption = #1056#1077#1076#1072#1082#1090#1086#1088' '#1092#1088#1077#1079#1099
