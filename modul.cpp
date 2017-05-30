@@ -20,6 +20,7 @@ __fastcall Tarticlebase::Tarticlebase(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
 void __fastcall Tarticlebase::tableupdate()
 {
 	MYSQL_ROW row;
@@ -136,8 +137,11 @@ MYSQL_ROW row;
 void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 {
 		FILE *articlecost;
-		char *art;
-		char *cost;
+		FILE *insertlog;
+		int art;
+		int cost;
+		int insflag;
+		int a = 0;
 
 	MYSQL_ROW row;
 	int i;
@@ -147,36 +151,66 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 	AnsiString query = "SELECT m_article FROM rt_material";
 	mysql_query(db, query.c_str());
 	MYSQL_RES *result = mysql_store_result(db);
+	char *art1, qr=0;
 	if (result) {
 		articlecost=fopen ("warehouse.csv","r");
-		if (articlecost == NULL)	{
+		insertlog=fopen ("insert.log","w");
+		if (articlecost == NULL || insertlog == NULL)	{
 			Label7->Caption = "Ошибка открытия файла";
 			mysql_close(db);
 			mysql_server_end();
 			return;
 		}
-	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
-			while(fscanf(articlecost, "%s;%s\n", art, cost) != EOF) {
-				if (!strcmp(row[1],art)) {
-				  	Label7->Caption= 111;
-				}
+		while(fscanf(articlecost, "%d;%d\n", &art, &cost) != EOF) {
+			query = "UPDATE rt_material SET m_cost = ";
+			query= query+cost +" WHERE m_article = "+ art;
+			qr=mysql_query(db, query.c_str());
+			a = mysql_affected_rows(db);
+			if (a != 1) {
+				fprintf (insertlog, "%d\n", art);
+			}
 		}
-	}
+//		fclose(articlecost);
+//		articlecost=fopen ("warehouse.csv","r");
+
+//	  	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
+			while(fscanf(articlecost, "%d;%d\n", &art, &cost) != EOF) {
+			   AnsiString select1 = "SELECT * FROM rt_material WHERE m_article = ";
+			   select1 = select1+ art;
+			   mysql_query(db, select1.c_str());
+			   MYSQL_RES *result1 = mysql_store_result(db);
+//			   if (result1) {
+//
+//				 ShowMessage("111");
+//			   } else {
+//				   ShowMessage("222");
+//			   }
+//				if (StrToInt(row[0]) != art) {
+//					 insflag = 1;
+//				} else {
+//					 insflag = 0;
+//				}
+			}
+
+//		}
 	}else {
 		Label7->Caption="Error:" + (AnsiString)mysql_error(db);
 	}
 	mysql_close(db);
 	mysql_server_end();
+	tableupdate();
 	fclose(articlecost);
+	fclose(insertlog);
+
 }
+
 
 
 //---------------------------------------------------------------------------
 
 
 
-void __fastcall Tarticlebase::Button1Click(TObject *Sender)
-{
+void __fastcall Tarticlebase::Button1Click(TObject *Sender){
 	mysql_server_init(0, NULL, NULL);
 	MYSQL* db = mysql_init(NULL);
 	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
