@@ -172,12 +172,26 @@
             <DependentOn>Sverla_window_addcpp.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
-        <FormResources Include="aboutprogramm.dfm"/>
-        <FormResources Include="modul.dfm"/>
-        <FormResources Include="Rate.dfm"/>
+        <CppCompile Include="T4addtrack.cpp">
+            <Form>T4addtrack1</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>T4addtrack.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Table4editproj.cpp">
+            <Form>Edit_proj_instrums</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Table4editproj.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
         <FormResources Include="modulform2.dfm"/>
+        <FormResources Include="Rate.dfm"/>
+        <FormResources Include="Table4editproj.dfm"/>
         <FormResources Include="Sverla_window_addcpp.dfm"/>
         <FormResources Include="Edit_proj_windows.dfm"/>
+        <FormResources Include="aboutprogramm.dfm"/>
+        <FormResources Include="modul.dfm"/>
+        <FormResources Include="T4addtrack.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
