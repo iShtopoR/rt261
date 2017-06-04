@@ -7,7 +7,6 @@
 #include "modulform2.h"
 #include "aboutprogramm.h"
 #include "Edit_proj_windows.h"
-#include "Sverla_window_addcpp.h"
 #include <mysql.h>
 #include <stdlib.h>
 //---------------------------------------------------------------------------

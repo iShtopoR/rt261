@@ -19,7 +19,7 @@ __published:	// IDE-managed Components
 	void __fastcall addtrack_butClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-   //	int t4_tck;
+   int t4_tck;
 	__fastcall TT4addtrack1(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

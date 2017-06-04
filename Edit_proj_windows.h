@@ -10,7 +10,7 @@
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
 #include <mysql.h>
-#include "Edit_proj_windows.h"
+
 //---------------------------------------------------------------------------
 class TProj_editor_w : public TForm
 {
@@ -22,9 +22,10 @@ __published:	// IDE-managed Components
 	TButton *Edit_instrums_but;
 	TEdit *Add_inf;
 	TLabel *Label1;
-	TLabel *for_edit;
+	TLabel *name;
 	TLabel *Label2;
 	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall Proj_Grid_Update();
 	void __fastcall pj_save_butClick(TObject *Sender);
 	void __fastcall Edit_instrums_butClick(TObject *Sender);
 	void __fastcall proj_gridMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
@@ -37,7 +38,7 @@ public:		// User declarations
 	int row_id;
 	int col_id;
 	char contain[80];
-	char* chosen_col; //имя изменяемого стоблца
+	char chosen_col[12]; //имя изменяемого стоблца
 	__fastcall TProj_editor_w(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

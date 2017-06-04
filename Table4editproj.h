@@ -10,45 +10,41 @@
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
 #include <Vcl.Grids.hpp>
-#include "Mysql.h"
+#include "Edit_proj_windows.h"
 
 
 //---------------------------------------------------------------------------
 class TEdit_proj_instrums : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Код;
-	TLabel *клиент;
-	TLabel *длина;
-	TLabel *шир;
-	TLabel *прим;
-	TLabel *Label_error;
 	TStringGrid *edit_proj_grid;
-	TEdit *t3_edit_code;
-	TEdit *t3_edit_name;
-	TEdit *t3_edit_l;
-	TEdit *t3_edit_dscr;
-	TEdit *t3_edit_w;
-	TButton *t4_butt_save;
+	TButton *t4_butt_del;
 	TADOQuery *ADOQuery1;
 	TStringGrid *edit_proj_ekz;
 	TLabel *dostupnie;
 	TLabel *Proektnie;
 	TButton *t4add_butt;
-	TLabel *Label6;
+	TLabel *Label_error;
+	TLabel *delbu;
+	TLabel *dobavit;
 	void __fastcall FormCreate(TObject *Sender);
-	void __fastcall  Grid1Form();
+	void __fastcall Grid1Form();
 	void __fastcall t4add_buttClick(TObject *Sender);
 	void __fastcall	GridUpdateForm();
 	void __fastcall edit_proj_ekzMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
 		  int X, int Y);
+	void __fastcall t4_butt_delClick(TObject *Sender);
+	void __fastcall edit_proj_gridMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
+		  int X, int Y);
+
+
 
 private:	// User declarations
 public:
-   /*	int row_id;
-	int col_id;
-	char* contain_t2;
-	char* chosen_col;     */
+	char col_artic[18];    //артикул  инструмента
+	char col_del_artic[18]; //артикул удаляемого инструмента
+	char col_name[18];     //название инструмента
+	int row_clean_id; //для очистки таблицы после удаления инструмента
 		// User declarations
 	__fastcall TEdit_proj_instrums(TComponent* Owner);
 };

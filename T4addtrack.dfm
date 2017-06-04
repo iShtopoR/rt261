@@ -4,7 +4,7 @@ object T4addtrack1: TT4addtrack1
   Caption = #1044#1086#1073#1072#1074#1083#1077#1085#1080#1077' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1072' '#1074' '#1087#1088#1086#1077#1082#1090
   ClientHeight = 100
   ClientWidth = 336
-  Color = clBtnFace
+  Color = 16562040
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -30,7 +30,7 @@ object T4addtrack1: TT4addtrack1
     Left = 32
     Top = 40
     Width = 121
-    Height = 25
+    Height = 21
     TabOrder = 0
   end
   object addtrack_but: TButton

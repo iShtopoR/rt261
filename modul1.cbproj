@@ -166,12 +166,6 @@
             <DependentOn>Rate.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Sverla_window_addcpp.cpp">
-            <Form>Sverla_window_add</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>Sverla_window_addcpp.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
         <CppCompile Include="T4addtrack.cpp">
             <Form>T4addtrack1</Form>
             <FormType>dfm</FormType>
@@ -187,11 +181,10 @@
         <FormResources Include="modulform2.dfm"/>
         <FormResources Include="Rate.dfm"/>
         <FormResources Include="Table4editproj.dfm"/>
-        <FormResources Include="Sverla_window_addcpp.dfm"/>
+        <FormResources Include="T4addtrack.dfm"/>
         <FormResources Include="Edit_proj_windows.dfm"/>
         <FormResources Include="aboutprogramm.dfm"/>
         <FormResources Include="modul.dfm"/>
-        <FormResources Include="T4addtrack.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -1,10 +1,10 @@
-﻿object Edit_proj_instrums: TEdit_proj_instrums
+object Edit_proj_instrums: TEdit_proj_instrums
   Left = 0
   Top = 0
-  Caption = 'Edit_proj_instrums'
-  ClientHeight = 609
-  ClientWidth = 894
-  Color = clBtnFace
+  Caption = #1056#1077#1076#1072#1082#1090#1086#1088' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1086#1074' '#1087#1088#1086#1077#1082#1090#1072
+  ClientHeight = 512
+  ClientWidth = 826
+  Color = 16562040
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -14,74 +14,93 @@
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Код: TLabel
-    Left = 330
-    Top = 19
-    Width = 65
-    Height = 13
-    Caption = #1050#1086#1076' '#1087#1088#1086#1077#1082#1090#1072
-  end
-  object клиент: TLabel
-    Left = 330
-    Top = 46
-    Width = 37
-    Height = 13
-    Caption = #1050#1083#1080#1077#1085#1090
-  end
-  object длина: TLabel
-    Left = 328
-    Top = 108
-    Width = 32
-    Height = 13
-    Caption = #1044#1083#1080#1085#1072
-  end
-  object шир: TLabel
-    Left = 328
-    Top = 135
-    Width = 40
-    Height = 13
-    Caption = #1064#1080#1088#1080#1085#1072
-  end
-  object прим: TLabel
-    Left = 328
-    Top = 73
-    Width = 61
-    Height = 13
-    Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
-  end
-  object Label_error: TLabel
-    Left = 359
-    Top = 154
-    Width = 3
-    Height = 13
-  end
   object dostupnie: TLabel
-    Left = 648
-    Top = 8
-    Width = 162
-    Height = 13
-    Caption = #1057#1087#1080#1089#1086#1082' '#1076#1086#1089#1090#1091#1087#1085#1099#1093' '#1101#1082#1079#1077#1084#1087#1083#1103#1088#1086#1074
+    Left = 544
+    Top = 4
+    Width = 242
+    Height = 17
+    Caption = #1057#1087#1080#1089#1086#1082' '#1076#1086#1089#1090#1091#1087#1085#1099#1093' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1086#1074
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Proektnie: TLabel
-    Left = 72
-    Top = 8
-    Width = 148
-    Height = 13
-    Caption = #1057#1087#1080#1089#1086#1082' '#1101#1082#1079#1077#1084#1087#1083#1103#1088#1086#1074' '#1087#1088#1086#1077#1082#1090#1072
+    Left = 56
+    Top = 4
+    Width = 220
+    Height = 17
+    Caption = #1057#1087#1080#1089#1086#1082' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1086#1074' '#1087#1088#1086#1077#1082#1090#1072
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
-  object Label6: TLabel
-    Left = 372
-    Top = 184
-    Width = 31
-    Height = 13
-    Caption = 'Label6'
+  object Label_error: TLabel
+    Left = 288
+    Top = 447
+    Width = 4
+    Height = 17
+    Color = 16562040
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'Tahoma'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object delbu: TLabel
+    Left = 336
+    Top = 224
+    Width = 157
+    Height = 70
+    Alignment = taCenter
+    Caption = 
+      #1044#1083#1103' '#1091#1076#1072#1083#1077#1085#1080#1103' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1072' '#1080#1079' '#1087#1088#1086#1077#1082#1090#1072' '#1074#1099#1073#1077#1088#1077#1090#1077' '#1085#1077#1086#1073#1093#1086#1076#1080#1084#1099#1081' '#1080#1085#1089#1090#1088#1091#1084 +
+      #1077#1085#1090' '#1074' '#1090#1072#1073#1083#1080#1094#1077' '#1089#1083#1077#1074#1072' '#1080' '#1085#1072#1078#1084#1080#1090#1077' '#1082#1085#1086#1087#1082#1091':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    WordWrap = True
+  end
+  object dobavit: TLabel
+    Left = 336
+    Top = 69
+    Width = 151
+    Height = 70
+    Alignment = taCenter
+    Caption = 
+      #1044#1083#1103' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1103' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1072' '#1074' '#1087#1088#1086#1077#1082#1090' '#1074#1099#1073#1077#1088#1077#1090#1077' '#1085#1077#1086#1073#1093#1086#1076#1080#1084#1099#1081' '#1080#1085#1089#1090#1088#1091#1084 +
+      #1077#1085#1090' '#1074' '#1090#1072#1073#1083#1080#1094#1077' '#1089#1087#1088#1072#1074#1072' '#1080' '#1085#1072#1078#1084#1080#1090#1077' '#1082#1085#1086#1087#1082#1091':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    WordWrap = True
   end
   object edit_proj_grid: TStringGrid
-    Left = 8
-    Top = 19
+    Left = 7
+    Top = 27
     Width = 322
-    Height = 529
+    Height = 414
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
+    OnMouseDown = edit_proj_gridMouseDown
     RowHeights = (
       24
       24
@@ -89,56 +108,35 @@
       24
       24)
   end
-  object t3_edit_code: TEdit
-    Left = 401
-    Top = 16
-    Width = 145
-    Height = 21
-    TabOrder = 1
-  end
-  object t3_edit_name: TEdit
-    Left = 401
-    Top = 43
-    Width = 145
-    Height = 21
-    TabOrder = 2
-  end
-  object t3_edit_l: TEdit
-    Left = 401
-    Top = 105
-    Width = 145
-    Height = 21
-    TabOrder = 3
-  end
-  object t3_edit_dscr: TEdit
-    Left = 401
-    Top = 70
-    Width = 145
-    Height = 21
-    TabOrder = 4
-  end
-  object t3_edit_w: TEdit
-    Left = 401
-    Top = 132
-    Width = 145
-    Height = 21
-    TabOrder = 5
-  end
-  object t4_butt_save: TButton
-    Left = 359
-    Top = 408
-    Width = 145
+  object t4_butt_del: TButton
+    Left = 336
+    Top = 300
+    Width = 154
     Height = 57
-    Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1080#1079#1084#1077#1085#1077#1085#1080#1103
-    TabOrder = 6
+    Caption = #1059#1076#1072#1083#1080#1090#1100' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = t4_butt_delClick
   end
   object edit_proj_ekz: TStringGrid
-    Left = 564
+    Left = 496
     Top = 27
-    Width = 322
-    Height = 529
+    Width = 326
+    Height = 414
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
-    TabOrder = 7
+    ParentFont = False
+    TabOrder = 2
     OnMouseDown = edit_proj_ekzMouseDown
     RowHeights = (
       24
@@ -148,12 +146,19 @@
       24)
   end
   object t4add_butt: TButton
-    Left = 359
-    Top = 289
-    Width = 145
+    Left = 335
+    Top = 145
+    Width = 158
     Height = 57
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090
-    TabOrder = 8
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
     OnClick = t4add_buttClick
   end
   object ADOQuery1: TADOQuery
@@ -161,7 +166,7 @@
       'Provider=MSDASQL.1;Persist Security Info=False;Data Source=zaoio' +
       's'
     Parameters = <>
-    Left = 392
-    Top = 232
+    Left = 760
+    Top = 480
   end
 end

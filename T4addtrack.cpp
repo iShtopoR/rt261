@@ -1,6 +1,7 @@
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
+#include <stdio.h>
 #pragma hdrstop
 
 #include "T4addtrack.h"
@@ -16,7 +17,7 @@ __fastcall TT4addtrack1::TT4addtrack1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TT4addtrack1::addtrack_butClick(TObject *Sender)
 {
-   /*//	track_edit->Text;
+   //	track_edit->Text;
 	char str[9], *p=str;
 	bool isd=true;
 	strcpy(str, AnsiString(track_edit->Text).c_str());
@@ -28,12 +29,14 @@ void __fastcall TT4addtrack1::addtrack_butClick(TObject *Sender)
 	  }
 	if(isd){
 		T4addtrack1->t4_tck=atoi(str);
-		Edit_proj_instrums->Grid1Form();
+		Edit_proj_instrums->GridUpdateForm();
 		track_edit->Clear();
+		Edit_proj_instrums->Grid1Form();
+
 		T4addtrack1->Close();
 	}
-	 //Label2->Caption = IntToStr(T4addtrack1->digit);
+	// Label2->Caption = Edit_proj_instrums->t2_name_con;
 
-           */
+
 }
 //---------------------------------------------------------------------------
