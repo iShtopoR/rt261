@@ -76,6 +76,7 @@ void __fastcall Tarticlebase::N4Click(TObject *Sender)
 	warehouse->articlebox->Clear();
 	warehouse->tableupdate1();
 	warehouse->Show();
+	articlebase->Visible = false;
 }
 //---------------------------------------------------------------------------
 

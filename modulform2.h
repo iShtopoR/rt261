@@ -39,6 +39,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall warehouseSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 
 private:	// User declarations

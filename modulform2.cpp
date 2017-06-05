@@ -82,6 +82,7 @@ void __fastcall Twarehouse::N2Click(TObject *Sender)
 void __fastcall Twarehouse::N4Click(TObject *Sender)
 {
 	articlebase->Show();
+	Close();
 }
 //---------------------------------------------------------------------------
 
@@ -210,4 +211,10 @@ void __fastcall Twarehouse::warehouseSelectCell(TObject *Sender, int ACol, int A
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall Twarehouse::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	articlebase->Visible = true;
+}
+//---------------------------------------------------------------------------
 
