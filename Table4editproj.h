@@ -3,30 +3,18 @@
 #ifndef Table4editprojH
 #define Table4editprojH
 //---------------------------------------------------------------------------
-//#include <System.Classes.hpp>
-//#include <Vcl.Controls.hpp>
-//#include <Vcl.StdCtrls.hpp>
-//#include <Vcl.Forms.hpp>
-//#include <Data.DB.hpp>
-//#include <Data.Win.ADODB.hpp>
-//#include <Vcl.Grids.hpp>
 #include "Edit_proj_windows.h"
-#include <ADODB.hpp>
 #include <Classes.hpp>
 #include <Controls.hpp>
-#include <DB.hpp>
 #include <Grids.hpp>
 #include <StdCtrls.hpp>
-
-
 //---------------------------------------------------------------------------
 class TEdit_proj_instrums : public TForm
 {
 __published:	// IDE-managed Components
-//	TStringGrid *edit_proj_grid;
+	TStringGrid *edit_proj_grid;
 	TButton *t4_butt_del;
-//	TADOQuery *ADOQuery1;
-//	TStringGrid *edit_proj_ekz;
+	TStringGrid *edit_proj_ekz;
 	TLabel *dostupnie;
 	TLabel *Proektnie;
 	TButton *t4add_butt;

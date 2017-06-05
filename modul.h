@@ -37,12 +37,11 @@ __published:	// IDE-managed Components
 	TMenuItem *N3;
 	TMenuItem *N4;
 	TLabel *Label6;
-	TButton *Button5;
 	TLabel *Label7;
 	TLabel *Label8;
-	TMenuItem *N5;
 	TMenuItem *N6;
 	TOpenTextFileDialog *OpenTextFileDialog;
+	TMenuItem *N7;
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -50,11 +49,10 @@ __published:	// IDE-managed Components
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall Button5Click(TObject *Sender);
-	void __fastcall N5Click(TObject *Sender);
 	void __fastcall materialSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect);
 	void __fastcall Button4Click(TObject *Sender);
 	void __fastcall N6Click(TObject *Sender);
+	void __fastcall N7Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

@@ -166,18 +166,9 @@ object articlebase: Tarticlebase
     TabOrder = 9
     OnClick = Button4Click
   end
-  object Button5: TButton
-    Left = 279
-    Top = 287
-    Width = 211
-    Height = 52
-    Caption = #1056#1072#1089#1089#1095#1077#1090' '#1089#1090#1086#1080#1084#1086#1089#1090#1080
-    TabOrder = 10
-    OnClick = Button5Click
-  end
   object MainMenu1: TMainMenu
-    Left = 8
-    Top = 432
+    Left = 16
+    Top = 408
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
       object N2: TMenuItem
@@ -194,10 +185,13 @@ object articlebase: Tarticlebase
     end
     object N5: TMenuItem
       Caption = #1052#1086#1080' '#1087#1088#1086#1077#1082#1090#1099
-      OnClick = N5Click
       object N6: TMenuItem
         Caption = #1057#1086#1079#1076#1072#1090#1100' '#1087#1088#1086#1077#1082#1090
         OnClick = N6Click
+      end
+      object N7: TMenuItem
+        Caption = #1056#1077#1076#1072#1082#1090#1086#1088' '#1087#1088#1086#1077#1082#1090#1086#1074
+        OnClick = N7Click
       end
     end
   end

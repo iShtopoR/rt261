@@ -32,7 +32,6 @@ void __fastcall TT4addtrack1::addtrack_butClick(TObject *Sender)
 		Edit_proj_instrums->GridUpdateForm();
 		track_edit->Clear();
 		Edit_proj_instrums->Grid1Form();
-
 		T4addtrack1->Close();
 	}
 	// Label2->Caption = Edit_proj_instrums->t2_name_con;

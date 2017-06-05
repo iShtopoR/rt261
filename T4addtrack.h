@@ -3,10 +3,10 @@
 #ifndef T4addtrackH
 #define T4addtrackH
 //---------------------------------------------------------------------------
-//#include <System.Classes.hpp>
-//#include <Vcl.Controls.hpp>
-//#include <Vcl.StdCtrls.hpp>
-//#include <Vcl.Forms.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
 #include "Table4editproj.h"
 //---------------------------------------------------------------------------
 class TT4addtrack1 : public TForm

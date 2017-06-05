@@ -41,7 +41,7 @@ object Edit_proj_instrums: TEdit_proj_instrums
     ParentFont = False
   end
   object Label_error: TLabel
-    Left = 288
+    Left = 17
     Top = 447
     Width = 4
     Height = 17
@@ -160,13 +160,5 @@ object Edit_proj_instrums: TEdit_proj_instrums
     ParentFont = False
     TabOrder = 3
     OnClick = t4add_buttClick
-  end
-  object ADOQuery1: TADOQuery
-    ConnectionString = 
-      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=zaoio' +
-      's'
-    Parameters = <>
-    Left = 760
-    Top = 480
   end
 end
