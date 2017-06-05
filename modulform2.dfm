@@ -40,8 +40,8 @@
   object Label3: TLabel
     Left = 248
     Top = 304
-    Width = 234
-    Height = 126
+    Width = 3
+    Height = 13
   end
   object Label4: TLabel
     Left = 232

@@ -146,13 +146,19 @@ int m_id;
 	}else {
 		Label3->Caption="Error:" + (AnsiString)mysql_error(db);
 	}
-	query = "INSERT INTO rt_warehouse (w_id, w_article, w_endres, w_status) VALUES ("+ IntToStr(m_id) +","
-	""+ article->Text +","+ ores->Text+ ","+ (wstatus->ItemIndex+1) +")";
-	int query_result = mysql_query(db, query.c_str());
-	if (query_result) {
-		  Label3->Caption = "Error" + (AnsiString)mysql_error(db);
-		  mysql_close(db);
-		  mysql_server_end();
+	if (article->Text == "" || article == " " || ores == "" || ores == " " || wstatus->Text == "" || wstatus == " ") {
+		ShowMessage("Заполните все поля формы вводы");
+		mysql_close(db);
+		mysql_server_end();
+	} else {
+		query = "INSERT INTO rt_warehouse (w_id, w_article, w_endres, w_status) VALUES ("+ IntToStr(m_id) +","
+		""+ article->Text +","+ ores->Text+ ","+ (wstatus->ItemIndex+1) +")";
+		int query_result = mysql_query(db, query.c_str());
+		if (query_result) {
+			  Label3->Caption = "Error" + (AnsiString)mysql_error(db);
+			  mysql_close(db);
+			  mysql_server_end();
+		}
 	}
 	mysql_close(db);
 	mysql_server_end();
@@ -161,5 +167,6 @@ int m_id;
 
 }
 //---------------------------------------------------------------------------
+
 
 

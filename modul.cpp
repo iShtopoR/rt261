@@ -6,7 +6,7 @@
 #include "modul.h"
 #include "modulform2.h"
 #include "aboutprogramm.h"
-#include "Edit_proj_windows.h"
+//#include "Edit_proj_windows.h"
 #include <mysql.h>
 #include <stdlib.h>
 //---------------------------------------------------------------------------
@@ -20,14 +20,14 @@ __fastcall Tarticlebase::Tarticlebase(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall Tarticlebase::tableupdate()
+void __fastcall Tarticlebase::tableupdate()   //функция обновления таблицы
 {
 	MYSQL_ROW row;
 	int i;
 	material->RowCount = 1;
 	mysql_server_init(0, NULL, NULL);
 	MYSQL *db = mysql_init(NULL);
-	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
+	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0); //данные к бд
 	AnsiString query = "SELECT m_article,m_name,m_cost,m_resource,m_unit FROM rt_material";
 	mysql_query(db, query.c_str());
 	MYSQL_RES *result = mysql_store_result(db);
@@ -152,8 +152,8 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 	MYSQL_RES *result = mysql_store_result(db);
 	char *art1, qr=0;
 	if (result) {
-		articlecost=fopen ("warehouse.csv","r");
-		insertlog=fopen ("insert.log","w");
+		articlecost=fopen ("cost.csv","r");
+		insertlog=fopen ("cost.log","w");
 		if (articlecost == NULL || insertlog == NULL)	{
 			Label7->Caption = "Ошибка открытия файла";
 			mysql_close(db);
@@ -195,6 +195,7 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 	}else {
 		Label7->Caption="Error:" + (AnsiString)mysql_error(db);
 	}
+	ShowMessage("Необновленные артикулы занесены в cost.log");
 	mysql_close(db);
 	mysql_server_end();
 	tableupdate();
@@ -219,13 +220,13 @@ void __fastcall Tarticlebase::Button1Click(TObject *Sender){
 	if (!result) {
 		Label1->Caption="Error:" + (AnsiString)mysql_error(db);
 	}
-	if (article->Text == "" || article->Text == " ") {
-	   article->Text = "Введите значение";
+	if (article->Text == "" || article->Text == " " || name->Text == "" || name->Text == " " || cost->Text =="" || cost->Text == " "|| res->Text =="" || res->Text == " ") {
+	   ShowMessage("Заполните все поля формы ввода");
 	   mysql_close(db);
 	   mysql_server_end();
 	} else {
 		query = "INSERT INTO rt_material (m_article,m_name,m_cost,m_resource,m_unit) VALUES ("+ article->Text +","
-		"'"+ name->Text +"',"+ cost->Text +","+ res->Text +","+ sunit->ItemIndex+1 +")";
+		"'"+ name->Text +"',"+ cost->Text +","+ res->Text +","+ (sunit->ItemIndex+1) +")";
 		int query_result = mysql_query(db, query.c_str());
 		if (query_result) {
 			  Label7->Caption = "Error" + (AnsiString)mysql_error(db);
@@ -285,7 +286,7 @@ void __fastcall Tarticlebase::Button5Click(TObject *Sender)
 
 void __fastcall Tarticlebase::N5Click(TObject *Sender)
 {
-	   Proj_editor_w->Show();
+//	   Proj_editor_w->Show();
 }
 //---------------------------------------------------------------------------
 

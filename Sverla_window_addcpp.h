@@ -1,28 +1,26 @@
 //---------------------------------------------------------------------------
 
-#ifndef T4addtrackH
-#define T4addtrackH
+#ifndef Sverla_window_addcppH
+#define Sverla_window_addcppH
 //---------------------------------------------------------------------------
 //#include <System.Classes.hpp>
 //#include <Vcl.Controls.hpp>
 //#include <Vcl.StdCtrls.hpp>
 //#include <Vcl.Forms.hpp>
-#include "Table4editproj.h"
+//#include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
-class TT4addtrack1 : public TForm
+class TSverla_window_add : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
-	TEdit *track_edit;
-	TButton *addtrack_but;
-	TLabel *Label2;
-	void __fastcall addtrack_butClick(TObject *Sender);
+//	TStringGrid *Str_projects;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TEdit *Edit3;
 private:	// User declarations
 public:		// User declarations
-   int t4_tck;
-	__fastcall TT4addtrack1(TComponent* Owner);
+	__fastcall TSverla_window_add(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TT4addtrack1 *T4addtrack1;
+extern PACKAGE TSverla_window_add *Sverla_window_add;
 //---------------------------------------------------------------------------
 #endif

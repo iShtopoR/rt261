@@ -22,8 +22,8 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(Twarehouse), &warehouse);
 		Application->CreateForm(__classid(Tabout), &about);
 		Application->CreateForm(__classid(TForm1), &Form1);
-		Application->CreateForm(__classid(TProj_editor_w), &Proj_editor_w);
-		Application->CreateForm(__classid(TEdit_proj_instrums), &Edit_proj_instrums);
+//		Application->CreateForm(__classid(TProj_editor_w), &Proj_editor_w);
+//		Application->CreateForm(__classid(TEdit_proj_instrums), &Edit_proj_instrums);
 		Application->CreateForm(__classid(TT4addtrack1), &T4addtrack1);
 		Application->Run();
 	}
