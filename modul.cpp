@@ -11,6 +11,7 @@
 //#include "Edit_proj_windows.h"
 #include <mysql.h>
 #include <stdlib.h>
+#include "ZakharovSemenyakina.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -317,6 +318,12 @@ void __fastcall Tarticlebase::materialSelectCell(TObject *Sender, int ACol, int 
 void __fastcall Tarticlebase::Button4Click(TObject *Sender)
 {
 	Frezes->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tarticlebase::N6Click(TObject *Sender)
+{
+	Form5->Show();
 }
 //---------------------------------------------------------------------------
 

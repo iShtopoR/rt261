@@ -68,47 +68,30 @@
 			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)\release;$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="aboutprogramm.cpp">
-				<Form>about</Form>
-				<DependentOn>aboutprogramm.h</DependentOn>
-				<BuildOrder>4</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Edit_proj_windows.cpp">
+			<CppCompile Include="T4addtrack.cpp">
 				<FormType>dfm</FormType>
-				<Form>Proj_editor_w</Form>
-				<DependentOn>Edit_proj_windows.h</DependentOn>
-				<BuildOrder>9</BuildOrder>
-			</CppCompile>
-			<LibFiles Include="libmysql.lib">
-				<IgnorePath>true</IgnorePath>
-				<BuildOrder>5</BuildOrder>
-			</LibFiles>
-			<CppCompile Include="modul.cpp">
-				<Form>articlebase</Form>
-				<DependentOn>modul.h</DependentOn>
-				<BuildOrder>2</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="modul1.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<None Include="modul1.otares"/>
-			<ResFiles Include="modul1.res">
-				<BuildOrder>1</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="modulform2.cpp">
-				<Form>warehouse</Form>
-				<DependentOn>modulform2.h</DependentOn>
-				<BuildOrder>3</BuildOrder>
+				<Form>T4addtrack1</Form>
+				<DependentOn>T4addtrack.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Rate.cpp">
 				<Form>Form1</Form>
 				<DependentOn>Rate.h</DependentOn>
 				<BuildOrder>7</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="T4addtrack.cpp">
-				<FormType>dfm</FormType>
-				<Form>T4addtrack1</Form>
-				<DependentOn>T4addtrack.h</DependentOn>
+			<CppCompile Include="modulform2.cpp">
+				<Form>warehouse</Form>
+				<DependentOn>modulform2.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Ekzemp.cpp">
+				<Form>EkzempForm</Form>
+				<DependentOn>Ekzemp.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Freza.cpp">
+				<Form>Frezes</Form>
+				<DependentOn>Freza.h</DependentOn>
 				<BuildOrder>11</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Table4editproj.cpp">
@@ -117,25 +100,52 @@
 				<DependentOn>Table4editproj.h</DependentOn>
 				<BuildOrder>10</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Freza.cpp">
-				<Form>Frezes</Form>
-				<DependentOn>Freza.h</DependentOn>
-				<BuildOrder>11</BuildOrder>
+			<ResFiles Include="modul1.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<LibFiles Include="libmysql.lib">
+				<IgnorePath>true</IgnorePath>
+				<BuildOrder>5</BuildOrder>
+			</LibFiles>
+			<CppCompile Include="Edit_proj_windows.cpp">
+				<FormType>dfm</FormType>
+				<Form>Proj_editor_w</Form>
+				<DependentOn>Edit_proj_windows.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Ekzemp.cpp">
-				<Form>EkzempForm</Form>
-				<DependentOn>Ekzemp.h</DependentOn>
-				<BuildOrder>12</BuildOrder>
+			<CppCompile Include="aboutprogramm.cpp">
+				<Form>about</Form>
+				<DependentOn>aboutprogramm.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
 			</CppCompile>
-			<FormResources Include="aboutprogramm.dfm"/>
-			<FormResources Include="Edit_proj_windows.dfm"/>
-			<FormResources Include="modul.dfm"/>
-			<FormResources Include="modulform2.dfm"/>
-			<FormResources Include="Rate.dfm"/>
+			<None Include="modul1.otares"/>
+			<CppCompile Include="modul1.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="modul.cpp">
+				<Form>articlebase</Form>
+				<DependentOn>modul.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="querystring.cpp">
+				<DependentOn>querystring.h</DependentOn>
+				<BuildOrder>13</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ZakharovSemenyakina.cpp">
+				<Form>Form5</Form>
+				<DependentOn>ZakharovSemenyakina.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
 			<FormResources Include="T4addtrack.dfm"/>
-			<FormResources Include="Table4editproj.dfm"/>
-			<FormResources Include="Freza.dfm"/>
+			<FormResources Include="Rate.dfm"/>
+			<FormResources Include="modulform2.dfm"/>
 			<FormResources Include="Ekzemp.dfm"/>
+			<FormResources Include="Freza.dfm"/>
+			<FormResources Include="Table4editproj.dfm"/>
+			<FormResources Include="Edit_proj_windows.dfm"/>
+			<FormResources Include="aboutprogramm.dfm"/>
+			<FormResources Include="modul.dfm"/>
+			<FormResources Include="ZakharovSemenyakina.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

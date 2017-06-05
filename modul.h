@@ -39,6 +39,7 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TLabel *Label8;
 	TMenuItem *N5;
+	TMenuItem *N6;
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -50,6 +51,7 @@ __published:	// IDE-managed Components
 	void __fastcall N5Click(TObject *Sender);
 	void __fastcall materialSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect);
 	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall N6Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations
