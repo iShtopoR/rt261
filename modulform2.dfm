@@ -56,26 +56,20 @@
     Font.Style = []
     ParentFont = False
   end
-  object article: TEdit
-    Left = 88
-    Top = 304
-    Width = 154
-    Height = 21
-    TabOrder = 0
-  end
   object ores: TEdit
     Left = 88
     Top = 331
     Width = 154
     Height = 21
-    TabOrder = 1
+    TabOrder = 0
   end
   object wstatus: TComboBox
     Left = 88
     Top = 358
     Width = 154
     Height = 21
-    TabOrder = 2
+    Style = csDropDownList
+    TabOrder = 1
     Items.Strings = (
       #1053#1086#1074#1072#1103' '#1092#1088#1077#1079#1072
       #1061#1086#1088#1086#1096#1077#1077' '#1082#1072#1095#1077#1089#1090#1074#1086' '#1088#1077#1079#1072
@@ -89,7 +83,7 @@
     Width = 75
     Height = 25
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -98,7 +92,7 @@
     Width = 241
     Height = 49
     Caption = #1069#1082#1089#1087#1086#1088#1090' '#1090#1072#1073#1083#1080#1094#1099
-    TabOrder = 4
+    TabOrder = 3
     OnClick = Button2Click
   end
   object Button3: TButton
@@ -107,7 +101,7 @@
     Width = 241
     Height = 48
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1076#1072#1085#1085#1099#1077
-    TabOrder = 5
+    TabOrder = 4
     OnClick = Button3Click
   end
   object warehouse: TStringGrid
@@ -120,8 +114,16 @@
     FixedCols = 0
     RowCount = 1
     FixedRows = 0
-    TabOrder = 6
+    TabOrder = 5
     OnSelectCell = warehouseSelectCell
+  end
+  object articlebox: TComboBox
+    Left = 88
+    Top = 304
+    Width = 154
+    Height = 21
+    Style = csDropDownList
+    TabOrder = 6
   end
   object MainMenu1: TMainMenu
     Left = 8

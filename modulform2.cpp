@@ -9,6 +9,7 @@
 #include "Ekzemp.h"
 #include "Freza.h"
 #include <mysql.h>
+#include "modul.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -19,6 +20,14 @@ __fastcall Twarehouse::Twarehouse(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void __fastcall Twarehouse::tableupdate1()   //функция обновления таблицы
+{
+	int i;
+	for (i = 1; i < articlebase->material->RowCount; i++) {
+		articlebox->Items->Add(articlebase->material->Cells[0][i]);
+	}
+}
 void __fastcall Twarehouse::tableupdate()
 {
 	MYSQL_ROW row;
@@ -62,6 +71,7 @@ void __fastcall Twarehouse::tableupdate()
 	}
 	mysql_close(db);
 	mysql_server_end();
+	tableupdate1();
 }
 void __fastcall Twarehouse::N2Click(TObject *Sender)
 {
@@ -148,13 +158,13 @@ int m_id;
 	}else {
 		Label3->Caption="Error:" + (AnsiString)mysql_error(db);
 	}
-	if (article->Text == "" || article == " " || ores == "" || ores == " " || wstatus->Text == "" || wstatus == " ") {
+	if (articlebox->Items == "" || articlebox->Items == " " || ores == "" || ores == " " || wstatus->Text == "" || wstatus == " ") {
 		ShowMessage("Заполните все поля формы вводы");
 		mysql_close(db);
 		mysql_server_end();
 	} else {
 		query = "INSERT INTO rt_warehouse (w_id, w_article, w_endres, w_status) VALUES ("+ IntToStr(m_id) +","
-		""+ article->Text +","+ ores->Text+ ","+ (wstatus->ItemIndex+1) +")";
+		""+ articlebox->Text +","+ ores->Text+ ","+ (wstatus->ItemIndex+1) +")";
 		int query_result = mysql_query(db, query.c_str());
 		if (query_result) {
 			  Label3->Caption = "Error" + (AnsiString)mysql_error(db);
@@ -198,4 +208,6 @@ void __fastcall Twarehouse::warehouseSelectCell(TObject *Sender, int ACol, int A
 		}
 }
 //---------------------------------------------------------------------------
+
+
 

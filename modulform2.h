@@ -13,7 +13,6 @@
 class Twarehouse : public TForm
 {
 __published:	// IDE-managed Components
-	TEdit *article;
 	TEdit *ores;
 	TComboBox *wstatus;
 	TLabel *Артикул;
@@ -30,10 +29,12 @@ __published:	// IDE-managed Components
 	TLabel *Label3;
 	TLabel *Label4;
 	TStringGrid *warehouse;
+	TComboBox *articlebox;
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall tableupdate();
+	void __fastcall tableupdate1();
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
