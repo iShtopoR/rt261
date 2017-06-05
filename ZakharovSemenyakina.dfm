@@ -3,8 +3,8 @@ object Form5: TForm5
   Top = 0
   Caption = #1060#1086#1088#1084#1072' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1103' '#1087#1088#1086#1077#1082#1090#1072
   ClientHeight = 334
-  ClientWidth = 469
-  Color = clBtnFace
+  ClientWidth = 527
+  Color = clMenuHighlight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
@@ -74,6 +74,13 @@ object Form5: TForm5
     Width = 4
     Height = 16
   end
+  object Label7: TLabel
+    Left = 50
+    Top = 217
+    Width = 26
+    Height = 16
+    Caption = #1050#1091#1088#1089
+  end
   object projectCodeEdit: TEdit
     Left = 128
     Top = 62
@@ -107,25 +114,25 @@ object Form5: TForm5
     TabOrder = 3
   end
   object rateEdit: TEdit
-    Left = 263
-    Top = 276
-    Width = 197
+    Left = 128
+    Top = 212
+    Width = 121
     Height = 24
     Alignment = taRightJustify
     TabOrder = 4
   end
   object getRateButton: TButton
-    Left = 112
-    Top = 276
-    Width = 145
+    Left = 50
+    Top = 245
+    Width = 199
     Height = 25
-    Caption = #1050#1091#1088#1089
+    Caption = #1042#1074#1077#1089#1090#1080' '#1082#1091#1088#1089' '#1072#1074#1090#1086#1084#1072#1090#1080#1095#1077#1089#1082#1080
     TabOrder = 5
     OnClick = getRateButtonClick
   end
   object enterDataButton: TButton
-    Left = 112
-    Top = 214
+    Left = 297
+    Top = 276
     Width = 145
     Height = 25
     Caption = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1087#1088#1086#1077#1082#1090
@@ -133,7 +140,7 @@ object Form5: TForm5
     OnClick = enterDataButtonClick
   end
   object chooseMillButton: TButton
-    Left = 112
+    Left = 297
     Top = 245
     Width = 145
     Height = 25
@@ -143,7 +150,7 @@ object Form5: TForm5
   end
   object discriptionEdit: TEdit
     Left = 128
-    Top = 184
+    Top = 182
     Width = 121
     Height = 24
     Alignment = taRightJustify
@@ -153,7 +160,7 @@ object Form5: TForm5
   object memoField: TMemo
     Left = 263
     Top = 45
-    Width = 210
+    Width = 256
     Height = 194
     Lines.Strings = (
       'memoField')

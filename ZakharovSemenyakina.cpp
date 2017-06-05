@@ -32,8 +32,8 @@ bool TForm5::areEqual(char *stringOne, char *stringTwo) {
 //---------------------------------------------------------------------------
 
 int TForm5::getProjectID() {
-	MYSQL_ROW row;
 	int idNumber;
+	MYSQL_ROW row;
 	mysql_server_init(0, NULL, NULL);
 	MYSQL *db = mysql_init(NULL);
 	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
@@ -61,7 +61,7 @@ int TForm5::getProjectID() {
 
 __fastcall TForm5::TForm5(TComponent* Owner): TForm(Owner) {
 	memoField->Text = "";
-	IDLabel->Caption = IntToStr(getProjectID());
+	//IDLabel->Caption = IntToStr(getProjectID());
 }
 
 //---------------------------------------------------------------------------
@@ -135,15 +135,15 @@ void __fastcall TForm5::chooseMillButtonClick(TObject *Sender) {
 
 void __fastcall TForm5::enterDataButtonClick(TObject *Sender) {
 	MYSQL_ROW row;
-	int idNumber;
+	int idNumber = getProjectID();
 	mysql_server_init(0, NULL, NULL);
 	MYSQL *db = mysql_init(NULL);
 	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
 
-	AnsiString query = "INSERT INTO `rt_projects` (pj_id, pj_code, pj_client, pj_length, pj_width, pj_dscpr) VALUES ('"+IDLabel->Caption+"','"+projectCodeEdit->Text+"','"+projectConsumerEdit->Text+"','"+boardLengthEdit->Text+"','"+boardWidthEdit->Text+"','"+discriptionEdit->Text+"')";
-	mysql_query(db,"SET NAMES 'utf8'");
-	mysql_query(db,"SET CHARACTER SET 'utf8'");
-	mysql_query(db,"SET SESSION collation_connection = 'utf8_general_ci'");
+	AnsiString query = "INSERT INTO `rt_projects` (`pj_id`, `pj_code`, `pj_client`, `pj_length`, `pj_width`, `pj_dscpr`, `pj_rate`) VALUES('"+IntToStr(idNumber)+"',  '"+projectCodeEdit->Text+"', '"+projectConsumerEdit->Text+"', '"+boardLengthEdit->Text+"', "+boardWidthEdit->Text+"', '"+discriptionEdit->Text+"', '"+rateEdit->Text+"')";
+	mysql_query(db,"SET NAMES cp1251");
+	mysql_query(db,"SET CHARACTER SET cp1251");
+	mysql_query(db,"SET SESSION collation_connection = cp1251");
 	if (projectConsumerEdit->Text == "" || boardWidthEdit->Text == "" || projectCodeEdit->Text == "") {
 		ShowMessage("Заполните все поля!");
 		return;
@@ -154,12 +154,13 @@ void __fastcall TForm5::enterDataButtonClick(TObject *Sender) {
 	mysql_close(db);
 	mysql_server_end();
 	memoField->Lines->Add("Созданный проект");
-	memoField->Lines->Add("ID проекта: " + IDLabel->Caption);
+	memoField->Lines->Add("ID проекта: " + IntToStr(idNumber));
 	memoField->Lines->Add("Код проекта: " + projectCodeEdit->Text);
 	memoField->Lines->Add("Заказчик: " + projectConsumerEdit->Text);
 	memoField->Lines->Add("Длина: " + boardLengthEdit->Text);
 	memoField->Lines->Add("Ширина: " + boardWidthEdit->Text);
-	memoField->Lines->Add("описание: " + discriptionEdit->Text);
+	memoField->Lines->Add("Описание: " + discriptionEdit->Text);
+	memoField->Lines->Add("Курс: " + rateEdit->Text);
 
 	IDLabel->Caption = IntToStr(getProjectID());
 	projectCodeEdit->Text = "";
@@ -167,6 +168,7 @@ void __fastcall TForm5::enterDataButtonClick(TObject *Sender) {
 	boardLengthEdit->Text = "";
 	boardWidthEdit->Text = "";
 	discriptionEdit->Text = "";
+	rateEdit->Text = "";
 
 }
 
@@ -182,19 +184,16 @@ void __fastcall TForm5::getRateButtonClick(TObject *Sender) {
 			rateXML->Active = true;
 			rateEdit->Text = rateXML->DocumentElement->ChildNodes->GetNode(10)->GetChildValue("Value");
 			rateXML->Active = false;
-			rateResult = StrToFloat(rateEdit->Text);
 		} catch (EIdHTTPProtocolException &E) {
 			ShowMessage("Не удается подключится к центробанку!");
 		} catch (EIdSocketError &E) {
 			ShowMessage("Нет подключения к интернету!");
 		}
 	}
-	else {
-		rateResult = StrToFloat(rateEdit->Text);
-	}
-
 }
 
 //---------------------------------------------------------------------------
+
+
 
 

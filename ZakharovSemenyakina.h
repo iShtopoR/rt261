@@ -41,6 +41,7 @@ __published:	// IDE-managed Components
 	TEdit *discriptionEdit;
 	TLabel *Label20;
 	TMemo *memoField;
+	TLabel *Label7;
 	void __fastcall chooseMillButtonClick(TObject *Sender);
 	void __fastcall enterDataButtonClick(TObject *Sender);
 	void __fastcall getRateButtonClick(TObject *Sender);
@@ -49,7 +50,6 @@ public:		// User declarations
 	__fastcall TForm5(TComponent* Owner);
 	bool areEqual(char *stringOne, char *stringTwo);
 	int getProjectID();
-	double rateResult;
 
 };
 //---------------------------------------------------------------------------
