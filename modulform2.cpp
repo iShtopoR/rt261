@@ -71,7 +71,7 @@ void __fastcall Twarehouse::tableupdate()
 	}
 	mysql_close(db);
 	mysql_server_end();
-	tableupdate1();
+//	tableupdate1();
 }
 void __fastcall Twarehouse::N2Click(TObject *Sender)
 {

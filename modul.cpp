@@ -73,6 +73,8 @@ void __fastcall Tarticlebase::tableupdate()   //функция обновления таблицы
 
 void __fastcall Tarticlebase::N4Click(TObject *Sender)
 {
+	warehouse->articlebox->Clear();
+	warehouse->tableupdate1();
 	warehouse->Show();
 }
 //---------------------------------------------------------------------------
@@ -168,7 +170,6 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 	MYSQL_RES *result = mysql_store_result(db);
 	char *art1, qr=0;
 	if (result) {
-//		articlecost=fopen ("cost.csv","r");
 		insertlog=fopen ("cost.log","w");
 		if (insertlog == NULL)	{
 			ShowMessage("Ошибка открытия файла");
@@ -185,29 +186,14 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 				fprintf (insertlog, "%d\n", art);
 			}
 		}
-//		fclose(articlecost);
-//		articlecost=fopen ("warehouse.csv","r");
-
-//	  	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
 			while(fscanf(rawFile, "%d;%d\n", &art, &cost) != EOF) {
 			   AnsiString select1 = "SELECT * FROM rt_material WHERE m_article = ";
 			   select1 = select1+ art;
 			   mysql_query(db, select1.c_str());
 			   MYSQL_RES *result1 = mysql_store_result(db);
-//			   if (result1) {
-//
-//				 ShowMessage("111");
-//			   } else {
-//				   ShowMessage("222");
-//			   }
-//				if (StrToInt(row[0]) != art) {
-//					 insflag = 1;
-//				} else {
-//					 insflag = 0;
-//				}
+
 			}
 
-//		}
 	}else {
 		ShowMessage("Error:" + (AnsiString)mysql_error(db));
 		mysql_close(db);
@@ -243,7 +229,7 @@ void __fastcall Tarticlebase::Button1Click(TObject *Sender){
 	   mysql_close(db);
 	   mysql_server_end();
 	} else {
-		query = "INSERT INTO rt_material (m_article,m_name,m_cost,m_resource,m_unit) VALUES ("+ article->Text +","
+		query = "INSERT INTO rt_material (m_article,m_name,m_cost,m_resource,m_unit) VALUES ('"+ article->Text +"',"
 		"'"+ name->Text +"',"+ cost->Text +","+ res->Text +","+ (sunit->ItemIndex+1) +")";
 		int query_result = mysql_query(db, query.c_str());
 		if (query_result) {
@@ -252,6 +238,8 @@ void __fastcall Tarticlebase::Button1Click(TObject *Sender){
 		mysql_close(db);
 		mysql_server_end();
 		tableupdate();
+		warehouse->articlebox->Clear();
+		warehouse->tableupdate1();
 	}
 
 
