@@ -300,7 +300,7 @@ void __fastcall Tarticlebase::materialSelectCell(TObject *Sender, int ACol, int 
           bool &CanSelect)
 {
 	if (ARow == 0) {
-		ShowMessage("Выберите нужный ID");
+
 	} else  {
 		if (ACol = 1) {
 			 Frezes->Measure->Caption = material->Cells[ACol+3][ARow];
