@@ -6,6 +6,8 @@
 #include "modul.h"
 #include "modulform2.h"
 #include "aboutprogramm.h"
+#include "Ekzemp.h"
+#include "Freza.h"
 #include <mysql.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -169,4 +171,31 @@ int m_id;
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall Twarehouse::Button3Click(TObject *Sender)
+{
+	EkzempForm->Show();
+	EkzempForm->IdentifEkzemp->Caption = ChoseIdentif;
+	EkzempForm->ArtOfEkz->Caption = warehouse->Cells[1][ChoseIdentif];
+	EkzempForm->RestResEkz->Caption = warehouse->Cells[2][ChoseIdentif];
+	EkzempForm->EkzState->Caption = warehouse->Cells[3][ChoseIdentif];
+	EkzempForm->ChangeOfRestResEkz->Text = warehouse->Cells[2][ChoseIdentif];
+	EkzempForm->NewState->Text = warehouse->Cells[3][ChoseIdentif];
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Twarehouse::warehouseSelectCell(TObject *Sender, int ACol, int ARow,
+          bool &CanSelect)
+{
+	if (ARow == 0) {
+
+	} else {
+	ChoseIdentif = StrToInt(warehouse->Cells[0][ARow]);
+		if(ACol == 0){
+			ChoseIdentif = StrToInt(warehouse->Cells[ACol][ARow]);
+		}
+		}
+}
+//---------------------------------------------------------------------------
 

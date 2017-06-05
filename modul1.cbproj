@@ -68,24 +68,42 @@
 			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)\release;$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<ItemGroup>
+			<CppCompile Include="aboutprogramm.cpp">
+				<Form>about</Form>
+				<DependentOn>aboutprogramm.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Edit_proj_windows.cpp">
+				<FormType>dfm</FormType>
+				<Form>Proj_editor_w</Form>
+				<DependentOn>Edit_proj_windows.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<LibFiles Include="libmysql.lib">
+				<IgnorePath>true</IgnorePath>
+				<BuildOrder>5</BuildOrder>
+			</LibFiles>
+			<CppCompile Include="modul.cpp">
+				<Form>articlebase</Form>
+				<DependentOn>modul.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="modul1.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<None Include="modul1.otares"/>
+			<ResFiles Include="modul1.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
 			<CppCompile Include="modulform2.cpp">
 				<Form>warehouse</Form>
 				<DependentOn>modulform2.h</DependentOn>
 				<BuildOrder>3</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="modul1.res">
-				<BuildOrder>1</BuildOrder>
-			</ResFiles>
 			<CppCompile Include="Rate.cpp">
 				<Form>Form1</Form>
 				<DependentOn>Rate.h</DependentOn>
 				<BuildOrder>7</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Table4editproj.cpp">
-				<FormType>dfm</FormType>
-				<Form>Edit_proj_instrums</Form>
-				<DependentOn>Table4editproj.h</DependentOn>
-				<BuildOrder>10</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="T4addtrack.cpp">
 				<FormType>dfm</FormType>
@@ -93,37 +111,31 @@
 				<DependentOn>T4addtrack.h</DependentOn>
 				<BuildOrder>11</BuildOrder>
 			</CppCompile>
-			<None Include="modul1.otares"/>
-			<CppCompile Include="Edit_proj_windows.cpp">
+			<CppCompile Include="Table4editproj.cpp">
 				<FormType>dfm</FormType>
-				<Form>Proj_editor_w</Form>
-				<DependentOn>Edit_proj_windows.h</DependentOn>
-				<BuildOrder>9</BuildOrder>
+				<Form>Edit_proj_instrums</Form>
+				<DependentOn>Table4editproj.h</DependentOn>
+				<BuildOrder>10</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="aboutprogramm.cpp">
-				<Form>about</Form>
-				<DependentOn>aboutprogramm.h</DependentOn>
-				<BuildOrder>4</BuildOrder>
+			<CppCompile Include="Freza.cpp">
+				<Form>Frezes</Form>
+				<DependentOn>Freza.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
 			</CppCompile>
-			<LibFiles Include="libmysql.lib">
-				<IgnorePath>true</IgnorePath>
-				<BuildOrder>5</BuildOrder>
-			</LibFiles>
-			<CppCompile Include="modul1.cpp">
-				<BuildOrder>0</BuildOrder>
+			<CppCompile Include="Ekzemp.cpp">
+				<Form>EkzempForm</Form>
+				<DependentOn>Ekzemp.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="modul.cpp">
-				<Form>articlebase</Form>
-				<DependentOn>modul.h</DependentOn>
-				<BuildOrder>2</BuildOrder>
-			</CppCompile>
+			<FormResources Include="aboutprogramm.dfm"/>
+			<FormResources Include="Edit_proj_windows.dfm"/>
+			<FormResources Include="modul.dfm"/>
 			<FormResources Include="modulform2.dfm"/>
 			<FormResources Include="Rate.dfm"/>
-			<FormResources Include="Table4editproj.dfm"/>
 			<FormResources Include="T4addtrack.dfm"/>
-			<FormResources Include="Edit_proj_windows.dfm"/>
-			<FormResources Include="aboutprogramm.dfm"/>
-			<FormResources Include="modul.dfm"/>
+			<FormResources Include="Table4editproj.dfm"/>
+			<FormResources Include="Freza.dfm"/>
+			<FormResources Include="Ekzemp.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

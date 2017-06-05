@@ -4,6 +4,12 @@
 #pragma hdrstop
 
 #include "Freza.h"
+#include "Ekzemp.h"
+#include "modulform2.h"
+#include "modul.h"
+#include <mysql.h>
+#include <stdlib.h>
+#include <stdio.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -14,39 +20,19 @@ __fastcall TFrezes::TFrezes(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TFrezes::NewArtFrChange(TObject *Sender)
+
+
+void __fastcall TFrezes::ChangeFrClick(TObject *Sender)
 {
-	double Article;
-	Article = StrToFloat(NewArtFr->Text);
+	mysql_server_init(0, NULL, NULL);
+	MYSQL* db = mysql_init(NULL);
+	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
+	AnsiString query = "";
+	query = query + "UPDATE rt_material SET m_article = '" + StrToInt(NewArtFr->Text) + "', m_name = '" + NewNameFr->Text + "', m_cost = " + NewCostFr->Text + ", m_resource = " + NewResFr->Text + " WHERE m_article = " + StrToInt(OldArt->Caption);		mysql_query(db, query.c_str());
+	Close();
+	articlebase->tableupdate();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFrezes::NewNameFrChange(TObject *Sender)
-{
-	char NameFr[70];
-	*NameFr = StrToFloat(NewNameFr ->Text);
 
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TFrezes::NewCostFrChange(TObject *Sender)
-{
-	float CostFr;
-	CostFr = StrToFloat(NewCostFr->Text);
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TFrezes::NewResFrChange(TObject *Sender)
-{
-	float ResourceFr;
-	ResourceFr = StrToFloat(NewResFr->Text);
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TFrezes::FrIdentChange(TObject *Sender)
-{
-	float IdentifFr;
-	IdentifFr = StrToFloat(FrIdent->Text);
-}
-//---------------------------------------------------------------------------
 

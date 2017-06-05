@@ -48,6 +48,9 @@ __published:	// IDE-managed Components
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall N5Click(TObject *Sender);
+	void __fastcall materialSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect);
+	void __fastcall Button4Click(TObject *Sender);
+
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tarticlebase(TComponent* Owner);

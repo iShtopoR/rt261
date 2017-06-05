@@ -22,26 +22,22 @@ __published:	// IDE-managed Components
 	TLabel *OldName;
 	TLabel *OldCost;
 	TLabel *OldRes;
-	TEdit *FrIdent;
-	TButton *FindOldFr;
 	TLabel *Label12;
 	TLabel *Label13;
 	TLabel *Label14;
 	TLabel *Label15;
 	TLabel *Label6;
 	TEdit *NewResFr;
-	TEdit *NewArtFr;
 	TEdit *NewNameFr;
 	TEdit *NewCostFr;
 	TLabel *Measure;
 	TButton *ChangeFr;
-	void __fastcall NewArtFrChange(TObject *Sender);
-	void __fastcall NewNameFrChange(TObject *Sender);
-	void __fastcall NewCostFrChange(TObject *Sender);
-	void __fastcall NewResFrChange(TObject *Sender);
-	void __fastcall FrIdentChange(TObject *Sender);
+	TLabel *Label7;
+	TEdit *NewArtFr;
+	void __fastcall ChangeFrClick(TObject *Sender);
 private:	// User declarations
-public:		// User declarations
+public:
+int EditArt;// User declarations
 	__fastcall TFrezes(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

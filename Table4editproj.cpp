@@ -122,13 +122,13 @@ void __fastcall TEdit_proj_instrums::t4add_buttClick(TObject *Sender)
 void __fastcall TEdit_proj_instrums::edit_proj_ekzMouseDown(TObject *Sender, TMouseButton Button,
 		  TShiftState Shift, int X, int Y)
 {
-	Edit_proj_instrums->t4add_butt->Enabled=1;
-	int  ACol,ARow;
-	edit_proj_ekz->MouseToCell(X, Y, ACol, ARow);
-	edit_proj_ekz->Col=ACol;
-	edit_proj_ekz->Row=ARow;                    //AnsiString .c_str()
-	strcpy(Edit_proj_instrums->col_artic, AnsiString(edit_proj_ekz->Cells[0][edit_proj_ekz->Row]).c_str());
-	strcpy(Edit_proj_instrums->col_name, AnsiString(edit_proj_ekz->Cells[1][edit_proj_ekz->Row]).c_str());
+//	Edit_proj_instrums->t4add_butt->Enabled=1;
+//	int  ACol,ARow;
+////	edit_proj_ekz->MouseToCell(X, Y, ACol, ARow);
+//	edit_proj_ekz->Col=ACol;
+//	edit_proj_ekz->Row=ARow;                    //AnsiString .c_str()
+//	strcpy(Edit_proj_instrums->col_artic, AnsiString(edit_proj_ekz->Cells[0][edit_proj_ekz->Row]).c_str());
+//	strcpy(Edit_proj_instrums->col_name, AnsiString(edit_proj_ekz->Cells[1][edit_proj_ekz->Row]).c_str());
 
 
    //	l2->Caption = Edit_proj_instrums->col_name;

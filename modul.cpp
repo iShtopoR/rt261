@@ -6,6 +6,8 @@
 #include "modul.h"
 #include "modulform2.h"
 #include "aboutprogramm.h"
+#include "Ekzemp.h"
+#include "Freza.h"
 //#include "Edit_proj_windows.h"
 #include <mysql.h>
 #include <stdlib.h>
@@ -287,6 +289,34 @@ void __fastcall Tarticlebase::Button5Click(TObject *Sender)
 void __fastcall Tarticlebase::N5Click(TObject *Sender)
 {
 //	   Proj_editor_w->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tarticlebase::materialSelectCell(TObject *Sender, int ACol, int ARow,
+          bool &CanSelect)
+{
+	if (ARow == 0) {
+		ShowMessage("Выберите нужный ID");
+	} else  {
+		if (ACol = 1) {
+			 Frezes->Measure->Caption = material->Cells[ACol+3][ARow];
+			 Frezes->OldRes->Caption = material->Cells[ACol+2][ARow];
+			 Frezes->OldCost->Caption = material->Cells[ACol+1][ARow];
+			 Frezes->OldArt->Caption = material->Cells[ACol-1][ARow];
+			 Frezes->OldName->Caption = material->Cells[ACol][ARow];
+
+			 Frezes->NewArtFr->Text = material->Cells[ACol-1][ARow];
+			 Frezes->NewNameFr->Text = material->Cells[ACol][ARow];
+			 Frezes->NewCostFr->Text = material->Cells[ACol+1][ARow];
+			 Frezes->NewResFr->Text = material->Cells[ACol+2][ARow];
+		 }
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tarticlebase::Button4Click(TObject *Sender)
+{
+	Frezes->Show();
 }
 //---------------------------------------------------------------------------
 

@@ -13,7 +13,6 @@
 class Twarehouse : public TForm
 {
 __published:	// IDE-managed Components
-	TStringGrid *warehouse;
 	TEdit *article;
 	TEdit *ores;
 	TComboBox *wstatus;
@@ -30,15 +29,20 @@ __published:	// IDE-managed Components
 	TMenuItem *N4;
 	TLabel *Label3;
 	TLabel *Label4;
+	TStringGrid *warehouse;
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall tableupdate();
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall warehouseSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect);
+
 
 private:	// User declarations
 public:		// User declarations
+	float ChoseIdentif;// User declarations
 	__fastcall Twarehouse(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

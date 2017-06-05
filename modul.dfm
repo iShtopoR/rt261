@@ -129,14 +129,15 @@ object articlebase: Tarticlebase
   end
   object material: TStringGrid
     Left = 21
-    Top = 40
+    Top = 39
     Width = 700
     Height = 193
     DefaultColWidth = 138
-    Enabled = False
+    FixedCols = 0
     RowCount = 1
     FixedRows = 0
     TabOrder = 6
+    OnSelectCell = materialSelectCell
   end
   object Button2: TButton
     Left = 496
@@ -163,6 +164,7 @@ object articlebase: Tarticlebase
     Height = 52
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1076#1072#1085#1085#1099#1077
     TabOrder = 9
+    OnClick = Button4Click
   end
   object Button5: TButton
     Left = 279

@@ -11,6 +11,12 @@
 //#include <Data.Win.ADODB.hpp>
 //#include <Vcl.Grids.hpp>
 #include "Edit_proj_windows.h"
+#include <ADODB.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <DB.hpp>
+#include <Grids.hpp>
+#include <StdCtrls.hpp>
 
 
 //---------------------------------------------------------------------------
