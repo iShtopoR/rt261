@@ -8,6 +8,7 @@
 #include "aboutprogramm.h"
 #include "Ekzemp.h"
 #include "Freza.h"
+#include "querystring.h"
 //#include "Edit_proj_windows.h"
 #include <mysql.h>
 #include <stdlib.h>
@@ -138,13 +139,25 @@ MYSQL_ROW row;
 
 void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 {
-		FILE *articlecost;
+		FILE *rawFile;
 		FILE *insertlog;
 		int art;
 		int cost;
 		int insflag;
 		int a = 0;
+    	AnsiString queryString = "";
+		AnsiString answerList = "";
+		OpenTextFileDialog->Title = "Открыть файл csv";
+		OpenTextFileDialog->InitialDir = "C:";
+		if(OpenTextFileDialog->Execute(this->Handle)) {
+			QueryString *object = new QueryString;
+			AnsiString filePath = OpenTextFileDialog->FileName;
+			rawFile = fopen(filePath.c_str(),"r");
+			if (rawFile == NULL) {
+				ShowMessage("No file");
 
+			}
+		}
 	MYSQL_ROW row;
 	int i;
 	mysql_server_init(0, NULL, NULL);
@@ -155,15 +168,15 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 	MYSQL_RES *result = mysql_store_result(db);
 	char *art1, qr=0;
 	if (result) {
-		articlecost=fopen ("cost.csv","r");
+//		articlecost=fopen ("cost.csv","r");
 		insertlog=fopen ("cost.log","w");
-		if (articlecost == NULL || insertlog == NULL)	{
-			Label7->Caption = "Ошибка открытия файла";
+		if (insertlog == NULL)	{
+			ShowMessage("Ошибка открытия файла");
 			mysql_close(db);
 			mysql_server_end();
 			return;
 		}
-		while(fscanf(articlecost, "%d;%d\n", &art, &cost) != EOF) {
+		while(fscanf(rawFile, "%d;%d\n", &art, &cost) != EOF) {
 			query = "UPDATE rt_material SET m_cost = ";
 			query= query+cost +" WHERE m_article = "+ art;
 			qr=mysql_query(db, query.c_str());
@@ -176,7 +189,7 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 //		articlecost=fopen ("warehouse.csv","r");
 
 //	  	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
-			while(fscanf(articlecost, "%d;%d\n", &art, &cost) != EOF) {
+			while(fscanf(rawFile, "%d;%d\n", &art, &cost) != EOF) {
 			   AnsiString select1 = "SELECT * FROM rt_material WHERE m_article = ";
 			   select1 = select1+ art;
 			   mysql_query(db, select1.c_str());
@@ -196,13 +209,15 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 
 //		}
 	}else {
-		Label7->Caption="Error:" + (AnsiString)mysql_error(db);
+		ShowMessage("Error:" + (AnsiString)mysql_error(db));
+		mysql_close(db);
+		mysql_server_end();
 	}
 	ShowMessage("Необновленные артикулы занесены в cost.log");
 	mysql_close(db);
 	mysql_server_end();
 	tableupdate();
-	fclose(articlecost);
+	fclose(rawFile);
 	fclose(insertlog);
 
 }

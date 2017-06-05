@@ -10,6 +10,8 @@
 #include <ExtCtrls.hpp>
 #include <Grids.hpp>
 #include <Menus.hpp>
+#include <Dialogs.hpp>
+#include <ExtDlgs.hpp>
 //---------------------------------------------------------------------------
 class Tarticlebase : public TForm
 {
@@ -40,6 +42,7 @@ __published:	// IDE-managed Components
 	TLabel *Label8;
 	TMenuItem *N5;
 	TMenuItem *N6;
+	TOpenTextFileDialog *OpenTextFileDialog;
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);

@@ -201,4 +201,9 @@ object articlebase: Tarticlebase
       end
     end
   end
+  object OpenTextFileDialog: TOpenTextFileDialog
+    Filter = 'csv|*.csv'
+    Left = 408
+    Top = 376
+  end
 end
