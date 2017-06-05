@@ -258,36 +258,36 @@ void __fastcall Tarticlebase::Button5Click(TObject *Sender)
 	int i_materials_pox;
 	// получаем стоимость сверла Стоимость / Ресурс * Время
 	// Время работы берем из таблицы заказа
-	// Общая формула:  ( ( ( СтоимостьИнструмента m_cost/ Ресурс m_res ) * Время ) +  ... + ... + ... ) * Курс
-   double totalPrice = 0; // Итоговая стоимость
-   double SverloPrice = 0; //TODO стоимость минуты сверла
-   double RabotaPrice = 0; //TODO стоимость минуты работы
-   double RatePrice = 63; //TODO Курс евро
-   mysql_server_init(0, NULL, NULL);
-   MYSQL* db = mysql_init(NULL);
-   mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
-   AnsiString query = "SELECT * FROM rt_projects WHERE pj_id = " + article->Text;  //TODO Изменить ID рабочего проекта
-   mysql_query(db, query.c_str());
-   MYSQL_RES* result = mysql_store_result(db);
-   for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
-	Label8->Caption = row[0];
-	AnsiString query_request_materials = "SELECT * FROM rt_proj_tool WHERE tl_id = "+Label8->Caption;
-	mysql_query(db, query_request_materials.c_str());
-	MYSQL_RES* result_materials = mysql_store_result(db);
-	for(i_materials = 1; (row_materials = mysql_fetch_row(result_materials)) != 0; i++) {
-		Label8->Caption = row_materials[1];
-		AnsiString query_request_materials_pox = "SELECT * FROM rt_material WHERE m_article = "+Label8->Caption;
-		mysql_query(db, query_request_materials_pox.c_str());
-		MYSQL_RES* result_materials_pox = mysql_store_result(db);
+	// Общая формула: ( ( ( СтоимостьИнструмента m_cost/ Ресурс m_res ) * Время ) + ... + ... + ... ) * Курс
+	double totalPrice = 0; // Итоговая стоимость
+	double SverloPrice = 0; //TODO стоимость минуты сверла
+	double RabotaPrice = 0; //TODO стоимость минуты работы
+	double RatePrice = 63; //TODO Курс евро
+	mysql_server_init(0, NULL, NULL);
+	MYSQL* db = mysql_init(NULL);
+	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
+	AnsiString query = "SELECT * FROM rt_projects WHERE pj_id = " + article->Text; //TODO Изменить ID рабочего проекта
+	mysql_query(db, query.c_str());
+	MYSQL_RES* result = mysql_store_result(db);
+	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
+		Label8->Caption = row[0];
+		AnsiString query_request_materials = "SELECT * FROM rt_proj_tool WHERE tl_id = "+Label8->Caption;
+		mysql_query(db, query_request_materials.c_str());
+		MYSQL_RES* result_materials = mysql_store_result(db);
+		for(i_materials = 1; (row_materials = mysql_fetch_row(result_materials)) != 0; i++) {
+			Label8->Caption = row_materials[1];
+			AnsiString query_request_materials_pox = "SELECT * FROM rt_material WHERE m_article = "+Label8->Caption;
+			mysql_query(db, query_request_materials_pox.c_str());
+			MYSQL_RES* result_materials_pox = mysql_store_result(db);
 			for(i_materials_pox = 1; (row_materials_pox = mysql_fetch_row(result_materials_pox)) != 0; i++) {
-				 totalPrice = totalPrice + (StrToFloat(row_materials_pox[2]) / StrToFloat(row_materials_pox[3]) * StrToFloat(row_materials[2]));
+				totalPrice = totalPrice + (StrToFloat(row_materials_pox[2]) / StrToFloat(row_materials_pox[3]) * StrToFloat(row_materials[2]));
 			}
 		}
    }
-   totalPrice = totalPrice * RatePrice;
-   float sadas = 0;
-   sadas = StrToFloat(totalPrice);
-   ShowMessage(FormatFloat("0.00",sadas));
+	totalPrice = totalPrice * RatePrice;
+	float sadas = 0;
+	sadas = StrToFloat(totalPrice);
+	ShowMessage(FormatFloat("0.00",sadas));
 }
 //---------------------------------------------------------------------------
 
