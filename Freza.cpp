@@ -28,7 +28,7 @@ void __fastcall TFrezes::ChangeFrClick(TObject *Sender)
 	MYSQL* db = mysql_init(NULL);
 	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
 	AnsiString query = "";
-	query = query + "UPDATE rt_material SET m_article = '" + StrToInt(NewArtFr->Text) + "', m_name = '" + NewNameFr->Text + "', m_cost = " + NewCostFr->Text + ", m_resource = " + NewResFr->Text + " WHERE m_article = " + StrToInt(OldArt->Caption);		mysql_query(db, query.c_str());
+	query = query + "UPDATE rt_material SET m_article = '" + NewArtFr->Text + "', m_name = '" + NewNameFr->Text + "', m_cost = " + NewCostFr->Text + ", m_resource = " + NewResFr->Text + " WHERE m_article = " + StrToInt(OldArt->Caption);		mysql_query(db, query.c_str());
 	Close();
 	articlebase->tableupdate();
 }

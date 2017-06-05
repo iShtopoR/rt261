@@ -156,7 +156,7 @@ void __fastcall Tarticlebase::Button2Click(TObject *Sender)
 			QueryString *object = new QueryString;
 			AnsiString filePath = OpenTextFileDialog->FileName;
 			rawFile = fopen(filePath.c_str(),"r");
-			if (rawFile == NULL) {
+			if (rawFile == NULL || rawFile == "") {
 				ShowMessage("No file");
 
 			}
