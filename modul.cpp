@@ -266,26 +266,28 @@ void __fastcall Tarticlebase::Button5Click(TObject *Sender)
    mysql_server_init(0, NULL, NULL);
    MYSQL* db = mysql_init(NULL);
    mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
-   AnsiString query = "SELECT * FROM rt_projects WHERE pj_id = 1";  //TODO Изменить ID рабочего проекта
+   AnsiString query = "SELECT * FROM rt_projects WHERE pj_id = " + article->Text;  //TODO Изменить ID рабочего проекта
    mysql_query(db, query.c_str());
    MYSQL_RES* result = mysql_store_result(db);
    for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
 	Label8->Caption = row[0];
-	AnsiString query_request_materials = "SELECT * FROM sverlo WHERE project_id = "+Label8->Caption;
+	AnsiString query_request_materials = "SELECT * FROM rt_proj_tool WHERE tl_id = "+Label8->Caption;
 	mysql_query(db, query_request_materials.c_str());
 	MYSQL_RES* result_materials = mysql_store_result(db);
 	for(i_materials = 1; (row_materials = mysql_fetch_row(result_materials)) != 0; i++) {
-		Label8->Caption = row_materials[2];
+		Label8->Caption = row_materials[1];
 		AnsiString query_request_materials_pox = "SELECT * FROM rt_material WHERE m_article = "+Label8->Caption;
 		mysql_query(db, query_request_materials_pox.c_str());
 		MYSQL_RES* result_materials_pox = mysql_store_result(db);
 			for(i_materials_pox = 1; (row_materials_pox = mysql_fetch_row(result_materials_pox)) != 0; i++) {
-				 totalPrice = totalPrice + (StrToFloat(row_materials_pox[2]) / StrToFloat(row_materials_pox[3]) * StrToFloat(row_materials[3]));
+				 totalPrice = totalPrice + (StrToFloat(row_materials_pox[2]) / StrToFloat(row_materials_pox[3]) * StrToFloat(row_materials[2]));
 			}
 		}
    }
    totalPrice = totalPrice * RatePrice;
-   ShowMessage(FloatToStr(totalPrice)+ " руб.");
+   float sadas = 0;
+   sadas = StrToFloat(totalPrice);
+   ShowMessage(FormatFloat("0.00",sadas));
 }
 //---------------------------------------------------------------------------
 
