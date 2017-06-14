@@ -88,7 +88,7 @@ void __fastcall TProj_editor_w::Proj_Grid_Update()
 	if (result) {
 	   //	strcpy(Edit_proj_instrums->contain_t2[1], IntToStr(result));
 		for (i=1; (row = mysql_fetch_row(result))!= 0; i++) {
-			for (k=0;k<=7; k++)  {   //пока есть
+			for (k=0;k<=7; k++)  {
 			proj_grid->RowCount++;
 			proj_grid->Cells[k][i] = row[k];
 			}
@@ -147,7 +147,7 @@ void __fastcall TProj_editor_w::eval_proj_buttClick(TObject *Sender)
 	mysql_server_init(0, NULL, NULL);
 	MYSQL* db = mysql_init(NULL);
 	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
-	AnsiString query = "SELECT * FROM rt_projects WHERE pj_id = " +String(Proj_editor_w->row_id)+ ""; //TODO Изменить ID рабочего проекта
+	AnsiString query = "SELECT * FROM rt_projects WHERE pj_id = " +String(Proj_editor_w->row_id)+"";
 	mysql_query(db, query.c_str());
 	MYSQL_RES* result = mysql_store_result(db);
 	for(i = 1; (row = mysql_fetch_row(result)) != 0; i++) {
@@ -168,6 +168,11 @@ void __fastcall TProj_editor_w::eval_proj_buttClick(TObject *Sender)
 	totalPrice = totalPrice * RatePrice;
 	float sadas = 0;
 	sadas = StrToFloat(totalPrice);
+	AnsiString upd = "UPDATE rt_projects SET pj_rate = '"+FloatToStr(sadas)+"' WHERE pj_id = "+String(Proj_editor_w->row_id)+"";
+	int query_result = mysql_query(db, upd.c_str());
+	if (query_result) {
+		Label_error->Caption = "Error: "+ (AnsiString)mysql_error(db);
+	}
 	ShowMessage(FormatFloat("0.00",sadas));
 	Proj_editor_w->Proj_Grid_Update();
 }
