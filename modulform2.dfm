@@ -126,6 +126,15 @@
     Style = csDropDownList
     TabOrder = 6
   end
+  object Button4: TButton
+    Left = 488
+    Top = 399
+    Width = 241
+    Height = 47
+    Caption = #1048#1084#1087#1086#1088#1090
+    TabOrder = 7
+    OnClick = Button4Click
+  end
   object MainMenu1: TMainMenu
     Left = 8
     Top = 400
@@ -143,5 +152,9 @@
         OnClick = N4Click
       end
     end
+  end
+  object OpenTextFileDialog: TOpenTextFileDialog
+    Left = 384
+    Top = 328
   end
 end

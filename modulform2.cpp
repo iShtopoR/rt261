@@ -10,6 +10,7 @@
 #include "Freza.h"
 #include <mysql.h>
 #include "modul.h"
+#include "querystring.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -216,5 +217,67 @@ void __fastcall Twarehouse::FormClose(TObject *Sender, TCloseAction &Action)
 {
 	articlebase->Visible = true;
 }
+//---------------------------------------------------------------------------
+
+void __fastcall Twarehouse::Button4Click(TObject *Sender)
+{
+		FILE *rawFile;
+		int art;
+		int cost;
+		int idart;
+		int idstatus;
+		int insflag;
+		int a = 0;
+    	AnsiString queryString = "";
+		AnsiString answerList = "";
+		OpenTextFileDialog->Title = "Открыть файл csv";
+		OpenTextFileDialog->InitialDir = "C:";
+		if(OpenTextFileDialog->Execute(this->Handle)) {
+			QueryString *object = new QueryString;
+			AnsiString filePath = OpenTextFileDialog->FileName;
+			rawFile = fopen(filePath.c_str(),"r");
+			if (rawFile == NULL || rawFile == "") {
+				ShowMessage("No file");
+
+			}
+		}
+	MYSQL_ROW row;
+	MYSQL_ROW row_new;
+	int i;
+	mysql_server_init(0, NULL, NULL);
+	MYSQL *db = mysql_init(NULL);
+	mysql_real_connect(db, "zaoios.ru", "rt_2018", "rt2_2018", "rt_rescalc", 0, NULL, 0);
+	AnsiString query = "SELECT * FROM rt_warehouse";
+	mysql_query(db, query.c_str());
+	MYSQL_RES *result = mysql_store_result(db);
+	char *art1, qr=0;
+	if (result) {
+		while(fscanf(rawFile, "%d;%d;%d;%d\n", &idart, &art, &cost, &idstatus) != EOF) {
+			query = "UPDATE rt_warehouse SET w_id = ";
+			query= query+idart +", w_article ="+ art +", w_endres = "+ cost +", w_status = " + idstatus+" WHERE w_id = "+ idart;
+			mysql_query(db, query.c_str());
+			a = mysql_affected_rows(db);
+			ShowMessage(a);
+			if (a != 1) {
+				query = "";
+				query = query + "INSERT INTO rt_warehouse (w_id, w_article, w_endres, w_status) VALUES ("+ idart +","
+				""+ art +","+ cost +","+ idstatus +")";
+
+				mysql_query(db, query.c_str());
+			}
+			a = 0;
+			}
+		} else {
+		ShowMessage("Error:" + (AnsiString)mysql_error(db));
+		mysql_close(db);
+		mysql_server_end();
+		}
+	mysql_close(db);
+	mysql_server_end();
+	tableupdate();
+	fclose(rawFile);
+
+}
+
 //---------------------------------------------------------------------------
 

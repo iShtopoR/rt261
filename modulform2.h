@@ -9,6 +9,8 @@
 #include <Forms.hpp>
 #include <Grids.hpp>
 #include <Menus.hpp>
+#include <Dialogs.hpp>
+#include <ExtDlgs.hpp>
 //---------------------------------------------------------------------------
 class Twarehouse : public TForm
 {
@@ -30,6 +32,8 @@ __published:	// IDE-managed Components
 	TLabel *Label4;
 	TStringGrid *warehouse;
 	TComboBox *articlebox;
+	TOpenTextFileDialog *OpenTextFileDialog;
+	TButton *Button4;
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -40,6 +44,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall warehouseSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	void __fastcall Button4Click(TObject *Sender);
 
 
 private:	// User declarations
